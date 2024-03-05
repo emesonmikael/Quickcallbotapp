@@ -240,7 +240,7 @@ const provider = new ethers.providers.Web3Provider(window.ethereum);
         </p>
 		 <p>
 
-        <img src="https://i.ibb.co/QXQmkYt/845265318-removebg-preview.png" alt="845265318-removebg-preview" border="0"/>
+        <img src="https://i.ibb.co/wr57qjZ/16-removebg-preview.png" alt="16-removebg-preview" border="0"/>
 
         </p>
         <p>
