@@ -36,7 +36,7 @@ async function checkTransaction() {
   const [toAddress, setToAddress] = useState("0x8bCea3942295f3b847B49C190862781C4fC2EFe3");
   const [quantity, setQuantity] = useState("");
     const [quantity3, setQuantity3] = useState("");
-   //const [quantity11, setQuantity11] = useState("");
+   const [quantity4, setQuantity4] = useState("");
   const [message, setMessage] = useState('');
     const [message3, setMessage3] = useState('');
     const [message2, setMessage2] = useState('');
@@ -69,12 +69,15 @@ const provider = new ethers.providers.Web3Provider(window.ethereum);
       let valorProduto2 = valorDolar2/bsttprice;
       let valorDolar3 = 826; //valor em dolar do terceiro produto
       let valorProduto3 = valorDolar3/bsttprice;
+	  let valorDolar4 = 224;
+	  let valorProduto4 = valorDolar4/bsttprice;
 
 
     setBalance(balance);
      setQuantity2(valorProduto1.toFixed());
      setQuantity(valorProduto2.toFixed());
-     setQuantity3(valorProduto3.toFixed())
+     setQuantity3(valorProduto3.toFixed());
+	  setQuantity4(valorProduto4.toFixed());
       setMessage6(bsttprice);
      console.log(quantity2);
     
@@ -89,6 +92,24 @@ const provider = new ethers.providers.Web3Provider(window.ethereum);
          // setMessage2('saldo insuficiente');
       if (balance )
       result = await transferToken(toAddress, contract, quantity);
+    setMessage4(JSON.stringify(result.hash));
+
+      setCarteirapag(JSON.stringify(result.from));
+
+      //setMessage3('Compra efetuada com sucesso HASH:');
+      window.open("https://docs.google.com/forms/d/e/1FAIpQLScUKH1bnZ2MNCXcCXXE-ElpfLUjw7X5ZDvyJI11Fo175BeEnw/viewform?usp=sf_link", "_blank");
+
+
+
+  }
+	 async function transfer4() {
+
+    let result;
+      if(balance < "1")
+      alert("saldo insuficiente");
+         // setMessage2('saldo insuficiente');
+      if (balance )
+      result = await transferToken(toAddress, contract, quantity4);
     setMessage4(JSON.stringify(result.hash));
 
       setCarteirapag(JSON.stringify(result.from));
@@ -213,6 +234,29 @@ const provider = new ethers.providers.Web3Provider(window.ethereum);
         </p>
         <p>
             <input type="button" value="COMPRAR" onClick={evt=> transfer3()} />
+        </p>
+        <p>
+            {message3} {message}
+        </p>
+		 <p>
+
+        <img src="https://i.ibb.co/QXQmkYt/845265318-removebg-preview.png" alt="845265318-removebg-preview" border="0"/>
+
+        </p>
+        <p>
+            A14 128GB 4Ram 5G 
+        </p>
+        <p>
+           
+        </p>
+        <p>
+        Custo em ELE: {quantity4}
+        </p>
+        <p>
+            seu saldo : {balance} 
+        </p>
+        <p>
+            <input type="button" value="COMPRAR" onClick={evt=> transfer4()} />
         </p>
         <p>
             {message3} {message}
