@@ -97,7 +97,7 @@ const provider = new ethers.providers.Web3Provider(window.ethereum);
       setCarteirapag(JSON.stringify(result.from));
 
       //setMessage3('Compra efetuada com sucesso HASH:');
-      window.open("https://docs.google.com/forms/d/e/1FAIpQLScUKH1bnZ2MNCXcCXXE-ElpfLUjw7X5ZDvyJI11Fo175BeEnw/viewform?usp=sf_link", "_blank");
+      window.open("https://docs.google.com/forms/d/e/1FAIpQLSf_APU-YKdfveMoXSMZjH1MGCfJte2TXNjtS_uxYk0ep0coPw/viewform?usp=sf_link", "_blank");
 
 
 
@@ -115,7 +115,7 @@ const provider = new ethers.providers.Web3Provider(window.ethereum);
       setCarteirapag(JSON.stringify(result.from));
 
       //setMessage3('Compra efetuada com sucesso HASH:');
-      window.open("https://docs.google.com/forms/d/e/1FAIpQLScUKH1bnZ2MNCXcCXXE-ElpfLUjw7X5ZDvyJI11Fo175BeEnw/viewform?usp=sf_link", "_blank");
+      window.open("https://docs.google.com/forms/d/e/1FAIpQLSda5Y6Syb27NU90KU6EEA8DDsKauHyBI2hpo18x2coiPXh2gg/viewform?usp=sf_link", "_blank");
 
 
 
@@ -150,7 +150,7 @@ const provider = new ethers.providers.Web3Provider(window.ethereum);
         setMessage6(JSON.stringify(result.hash));
         setCarteirapag(JSON.stringify(result.from));
         //setMessage3('Compra efetuada com sucesso HASH:');
-        window.open("https://docs.google.com/forms/d/e/1FAIpQLScUKH1bnZ2MNCXcCXXE-ElpfLUjw7X5ZDvyJI11Fo175BeEnw/viewform?usp=sf_link", "_blank");
+        window.open("https://docs.google.com/forms/d/e/1FAIpQLScoPwTAM_p_UqfBLzh3dzad0s4e_poAI3oPhkLZQ-QUnVdOPw/viewform?usp=sf_link", "_blank");
 
     }
 
