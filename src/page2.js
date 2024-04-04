@@ -7,13 +7,13 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import TelegramForm from './form';
 import reportWebVitals from './reportWebVitals';
-import App2 from './page2';
+import App3 from './page3';
 
 import './App.css';
 //import web3 from 'web3';
 
 
-function App() {
+function App2() {
     const [preço, setPreço] = useState("");
     const [preço6, setPreço6] = useState("");
     const [preço7, setPreço7] = useState("");
@@ -35,10 +35,8 @@ function App() {
     const [preço23, setPreço23] = useState("");
     const [preço24, setPreço24] = useState("");
     const [preço25, setPreço25] = useState("");
-    const [preço26, setPreço26] = useState("");
     const [preçoEle, setPreçoEle] = useState("");
     const [pres, setPres] = useState([]);
-    const [img,setImg]=useState("");
     const [url1,setUrl1]=useState("");
     const [url6,setUrl6]=useState("");
     const [url7,setUrl7]=useState("");
@@ -90,7 +88,6 @@ function App() {
     const [nomeproduto23,setNomeProduto23]=useState("");
     const [nomeproduto24,setNomeProduto24]=useState("");
     const [nomeproduto25,setNomeProduto25]=useState("");
-    const [nomeproduto26,setNomeProduto26]=useState("");
 
 
     useEffect(() => {
@@ -98,80 +95,80 @@ function App() {
         const f = await (await fetch("https://docs.google.com/spreadsheets/d/10Qk1jYNJ_wvcR8wXg5q7gTEb-ZdhCXq1/edit?usp=sharing&ouid=105075195163145601215&rtpof=true&sd=true")).arrayBuffer();
         const wb = read(f);
         const ws = wb.Sheets[wb.SheetNames[0]];
-        setPreço(ws.F3.v);
-        setPreço6(ws.F4.v);
-        setPreço7(ws.F5.v);
-        setPreço8(ws.F6.v);
-        setPreço9(ws.F7.v);
-        setPreço10(ws.F8.v);
-        setPreço11(ws.F9.v);
-        setPreço12(ws.F10.v);
-        setPreço13(ws.F11.v);
-        setPreço14(ws.F12.v);
-        setPreço15(ws.F13.v);
-        setPreço16(ws.F14.v);
-        setPreço17(ws.F15.v);
-        setPreço18(ws.F16.v);
-        setPreço19(ws.F17.v);
-        setPreço20(ws.F18.v);
-        setPreço21(ws.F19.v);
-        setPreço22(ws.F20.v);
-        setPreço23(ws.F21.v);
-        setPreço24(ws.F22.v);
-        setPreço25(ws.F23.v);
-        setPreço26(ws.F24.v);
-        setNomeProduto5(ws.B3.v);
-        setNomeProduto6(ws.B4.v);
-        setNomeProduto7(ws.B5.v);
-        setNomeProduto8(ws.B6.v);
-        setNomeProduto9(ws.B7.v);
-        setNomeProduto10(ws.B8.v);
-        setNomeProduto11(ws.B9.v);
-        setNomeProduto12(ws.B10.v);
-        setNomeProduto13(ws.B11.v);
-        setNomeProduto14(ws.B12.v);
-        setNomeProduto15(ws.B13.v);
-        setNomeProduto16(ws.B14.v);
-        setNomeProduto17(ws.B15.v);
-        setNomeProduto18(ws.B16.v);
-        setNomeProduto19(ws.B17.v);
-        setNomeProduto20(ws.B18.v);
-        setNomeProduto21(ws.B19.v);
-        setNomeProduto22(ws.B20.v);
-        setNomeProduto23(ws.B21.v);
-        setNomeProduto24(ws.B22.v);
-        setNomeProduto25(ws.B23.v);
-        setNomeProduto26(ws.B24.v);
+        setPreço(ws.F26.v);
+        setPreço6(ws.F27.v);
+        setPreço7(ws.F28.v);
+        setPreço8(ws.F29.v);
+        setPreço9(ws.F30.v);
+        setPreço10(ws.F31.v);
+        setPreço11(ws.F32.v);
+        setPreço12(ws.F33.v);
+        setPreço13(ws.F34.v);
+        setPreço14(ws.F35.v);
+        setPreço15(ws.F36.v);
+        setPreço16(ws.F37.v);
+        setPreço17(ws.F38.v);
+        setPreço18(ws.F40.v);
+        setPreço19(ws.F41.v);
+        setPreço20(ws.F42.v);
+        setPreço21(ws.F43.v);
+        setPreço22(ws.F44.v);
+        setPreço23(ws.F46.v);
+        setPreço24(ws.F47.v);
+        setPreço25(ws.F48.v);
+        
+        setNomeProduto5(ws.B26.v);
+        setNomeProduto6(ws.B27.v);
+        setNomeProduto7(ws.B28.v);
+        setNomeProduto8(ws.B29.v);
+        setNomeProduto9(ws.B30.v);
+        setNomeProduto10(ws.B31.v);
+        setNomeProduto11(ws.B32.v);
+        setNomeProduto12(ws.B33.v);
+        setNomeProduto13(ws.B34.v);
+        setNomeProduto14(ws.B35.v);
+        setNomeProduto15(ws.B36.v);
+        setNomeProduto16(ws.B37.v);
+        setNomeProduto17(ws.B38.v);
+        setNomeProduto18(ws.B40.v);
+        setNomeProduto19(ws.B41.v);
+        setNomeProduto20(ws.B42.v);
+        setNomeProduto21(ws.B43.v);
+        setNomeProduto22(ws.B44.v);
+        setNomeProduto23(ws.B46.v);
+        setNomeProduto24(ws.B47.v);
+        setNomeProduto25(ws.B48.v);
+        //setNomeProduto26(ws.B24.v);
         //setNomeProduto27(ws.B25.v);
         //setNomeProduto28(ws.B26.v);
         //setNomeProduto29(ws.B27.v);
         const data = utils.sheet_to_json(ws);
         setPres(data);
-       
-        setUrl1(ws.E3.v);
-        setUrl6(ws.E4.v);
-        setUrl7(ws.E5.v);
-        setUrl8(ws.E6.v);
-        setUrl9(ws.E7.v);
-        setUrl10(ws.E8.v);
-        setUrl11(ws.E9.v);
-        setUrl12(ws.E10.v);
-        setUrl13(ws.E11.v);
-        setUrl14(ws.E12.v);
-        setUrl15(ws.E13.v);
-        setUrl16(ws.E14.v);
-        setUrl17(ws.E15.v);
-        setUrl18(ws.E16.v);
-        setUrl19(ws.E17.v);
-        setUrl20(ws.E18.v);
-        setUrl21(ws.E19.v);
-        setUrl22(ws.E20.v);
-        setUrl23(ws.E21.v);
-        setUrl24(ws.E22.v);
-        setUrl25(ws.E23.v);
-        setUrl26(ws.E24.v);
-        setImg(ws.N19.v);
-       
+        setUrl1(ws.E26.v);
+        setUrl6(ws.E27.v);
+        setUrl7(ws.E28.v);
+        setUrl8(ws.E29.v);
+        setUrl9(ws.E30.v);
+        setUrl10(ws.E31.v);
+        setUrl11(ws.E32.v);
+        setUrl12(ws.E33.v);
+        setUrl13(ws.E34.v);
+        setUrl14(ws.E35.v);
+        setUrl15(ws.E36.v);
+        setUrl16(ws.E37.v);
+        setUrl17(ws.E38.v);
+        setUrl18(ws.E40.v);
+        setUrl19(ws.E41.v);
+        setUrl20(ws.E42.v);
+        setUrl21(ws.E43.v);
+        setUrl22(ws.E44.v);
+        setUrl23(ws.E46.v);
+        setUrl24(ws.E47.v);
+        setUrl25(ws.E48.v);
+        //setUrl26(ws.I24.v);
+        //setUrl27(ws.I24.v);
+       // setUrl28(ws.I26.v);
+        //setUrl29(ws.I27.v);
         
         console.log(nomeproduto5);
       })();
@@ -195,11 +192,11 @@ const [error, setError] = useState("");
 //const [to , setTo] = useState("0xE6d7083A880b5D30170b5335D8Ac9e30Aa0fa8a2");
 const [transaction, setTransaction] = useState("");
 //const CONTRACT_ADDRESS = "0x983060ea9ae659045C130C17312065139a479442";
-async function pagina2(){
+async function pagina3(){
   const root = ReactDOM.createRoot(document.getElementById('root'));
   root.render(
     <React.StrictMode>
-      <App2 />
+      <App3 />
     </React.StrictMode>
   );
   
@@ -209,6 +206,7 @@ async function pagina2(){
   reportWebVitals();
 
 }
+
 async function formulario(){
   const root = ReactDOM.createRoot(document.getElementById('root'));
   root.render(
@@ -267,7 +265,6 @@ async function checkTransaction() {
    const [quantity23, setQuantity23] = useState("");
    const [quantity24, setQuantity24] = useState("");
    const [quantity25, setQuantity25] = useState("");
-   const [quantity26, setQuantity26] = useState("");
   const [message, setMessage] = useState('');
     const [message3, setMessage3] = useState('');
     const [message2, setMessage2] = useState('');
@@ -331,7 +328,6 @@ const provider = new ethers.providers.Web3Provider(window.ethereum);
     setQuantity23((preço23/preçoEle).toFixed());
     setQuantity24((preço24/preçoEle).toFixed());
     setQuantity25((preço25/preçoEle).toFixed());
-    setQuantity26((preço26/preçoEle).toFixed());
     setMessage6(bsttprice);
      console.log(quantity2);
     
@@ -688,20 +684,6 @@ async function transfer25() {
   //setMessage3('Compra efetuada com sucesso HASH:');
   formulario();
 }
-async function transfer26() {
-  let result;
-  if(balance <"1")
-  alert("saldo insuficiente");
-     // setMessage2('saldo insuficiente');
-  if (balance)
-
-      result = await transferToken(toAddress, contract, quantity26);
-
-  setMessage6(JSON.stringify(result.hash));
-  setCarteirapag(JSON.stringify(result.from));
-  //setMessage3('Compra efetuada com sucesso HASH:');
-  formulario();
-}
 
 
  
@@ -716,103 +698,7 @@ async function transfer26() {
   <p> teste {preço25}</p><button onClick={formulario}>ver tabela de preços</button>
     <div>
 
-     	<p>
-       <img src="https://i.ibb.co/9sb37JN/photo1708360668-removebg-preview.png" alt="photo1708360668-removebg-preview" border="0"/>
-
-	</p>
-        <p>
-            TV BOX VENDOR 64GB
-
-        </p>
-
-<p>
-        
-      </p>
-        <p>
-            Custo em ELE: {quantity2} 
-        </p>
-
-            seu saldo : {balance}
-
-        
-<p>
-       <input type="button" value="COMPRAR" onClick={evt => transfer2()} />
-      </p>
-        <p>
-            {message3} {message5}
-        </p>
-     <hr />
-     <p>
-
-     <img src="https://i.ibb.co/8rYRjtj/IMG-9911-removebg-preview.png" alt="IMG-9911-removebg-preview" border="0"/>
-
-</p>
-
-
- <p>
-      POCO X5 256GB/8Ram 5G
-      </p>
-        <p>
-            
-        </p>
-        <p>
-        Custo em ELE:  {quantity}
-        </p>
-        <p>
-            seu saldo : {balance} 
-        </p>
-      <p>
-        <input type="button" value="COMPRAR" onClick={evt=> transfer()} />
-      </p>
-        <p>
-            {message3} {message4}
-        </p>
-        <p>
-
-        <img src="https://i.ibb.co/QXQmkYt/845265318-removebg-preview.png" alt="845265318-removebg-preview" border="0"/>
-
-        </p>
-        <p>
-            IPhone 14 128GB Chip Fisico
-        </p>
-        <p>
-           
-        </p>
-        <p>
-        Custo em ELE: {quantity3}
-        </p>
-        <p>
-            seu saldo : {balance} 
-        </p>
-        <p>
-            <input type="button" value="COMPRAR" onClick={evt=> transfer3()} />
-        </p>
-        <p>
-            {message3} {message}
-        </p>
-		 <p>
-
-        <img src="https://i.ibb.co/wr57qjZ/16-removebg-preview.png" alt="16-removebg-preview" border="0"/>
-
-        </p>
-        <p>
-            A14 128GB 4Ram 5G 
-        </p>
-        <p>
-           
-        </p>
-        <p>
-        Custo em ELE: {quantity4}
-        </p>
-        <p>
-            seu saldo : {balance} 
-        </p>
-        <p>
-            <input type="button" value="COMPRAR" onClick={evt=> transfer4()} />
-        </p>
-        <p>
-            {message3} {message}
-        </p>
+     
         <p>
 
      <img src={url1} alt="IMG-9911-removebg-preview" border="0"/>
@@ -1290,7 +1176,7 @@ async function transfer26() {
    </p>
    <p>
 
-<img src={url24}  alt="note-13-pro-5g-removebg-preview" border="0"/>
+<img src={url24} alt="IMG-9911-removebg-preview" border="0"/>
 
 </p>
 
@@ -1313,10 +1199,9 @@ async function transfer26() {
    <p>
        {message3} {message4}
    </p>
-   
    <p>
 
-<img src={url25}/>
+<img src={url25} alt="IMG-9911-removebg-preview" border="0"/>
 
 </p>
 
@@ -1337,32 +1222,7 @@ async function transfer26() {
    <input type="button" value="COMPRAR" onClick={evt=> transfer25()} />
  </p>
    <p>
-       {message3} {message4} 
-   </p>
-   <p>
-
-<img src={url26}/>
-
-</p>
-
-
-<p>
-        {nomeproduto26}
- </p>
-   <p>
-       
-   </p>
-   <p>
-   Custo em ELE:  {quantity26}
-   </p>
-   <p>
-       seu saldo : {balance} 
-   </p>
- <p>
-   <input type="button" value="COMPRAR" onClick={evt=> transfer26()} />
- </p>
-   <p>
-       {message3} {message4} <input type="button" value="pagina seguinte" onClick={evt=> pagina2()} />
+       {message3} {message4} <input type="button" value="pagina seguinte" onClick={evt=> pagina3()} />
    </p>
 
       <hr />
@@ -1387,4 +1247,4 @@ async function transfer26() {
 }
 
 
-export default App;
+export default App2;
