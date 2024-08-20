@@ -13,7 +13,7 @@ const TelegramGroupManager = () => {
   const [wallet, setWallet] = useState('');
 
   const contractAddress = '0x671661fd500296A35F83BE32d96A367B98F4b87b';
-  const usdtTokenAddress = '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82';
+  const usdtTokenAddress = '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE820x8d008B313C1d6C7fE2982F62d32Da7507cF43551';
   const contractABI = [
     "function name() view returns (string)",
     "function symbol() view returns (string)",
