@@ -8,6 +8,7 @@ import ReactDOM from 'react-dom/client';
 import TelegramForm from './form';
 import reportWebVitals from './reportWebVitals';
 import App2 from './page2';
+import TelegramGroupManager from './meta';
 
 import './App.css';
 //import web3 from 'web3';
