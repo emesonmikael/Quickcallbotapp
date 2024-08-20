@@ -8,7 +8,7 @@ import TelegramGroupManager from './meta';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <TelegramGroupManager />
+    <App />
   </React.StrictMode>
 );
 
