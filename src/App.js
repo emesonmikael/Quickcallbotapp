@@ -372,6 +372,17 @@ const provider = new ethers.providers.Web3Provider(window.ethereum);
 
   }
 
+   // Função para lidar com a seleção do grupo
+ const handleGroupSelect = (groupId) => {
+  const group = groups.find(g => g.id === groupId);
+  if (group) {
+    setSelectedGroup(group);
+    setQuantity(group.valor); // Define a variável quantity com o valor correspondente
+    setChatid(group.grupoid);
+    console.log(quantity);
+  }
+};
+
   async function transfer() {
 
     let result;
