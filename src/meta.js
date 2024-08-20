@@ -12,10 +12,23 @@ const TelegramGroupManager = () => {
   const [value, setValue] = useState('');
   const [wallet, setWallet] = useState('');
 
-  const contractAddress = 'ENDEREÇO_DO_CONTRATO';
-  const usdtTokenAddress = 'ENDEREÇO_DO_USDT_TOKEN';
-  const contractABI = [ /* ABI do contrato aqui */ ];
-
+  const contractAddress = '0x671661fd500296A35F83BE32d96A367B98F4b87b';
+  const usdtTokenAddress = '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82';
+  const contractABI = [
+    "function name() view returns (string)",
+    "function symbol() view returns (string)",
+    "function balanceOf(address) view returns (uint)",
+    "function decimals() public view returns (uint8)",
+    "function totalSupply() public view returns (uint256)",
+    "function transfer(address to, uint amount)",
+    "function pay(uint256 groupId, uint256 amount) public ",
+    "function registerGroup(string memory _name, string memory _telegramId, uint256 _value, address _wallet) public onlyOwner",
+    "function getGroup(uint256 groupId) public view returns (string memory, string memory, uint256, address)",
+    "event Transfer(address indexed from, address indexed to, uint amount)",
+    "event GroupRegistered(uint256 groupId, string name, string telegramId, address wallet)",
+    "event PaymentProcessed(address indexed payer, uint256 amount, uint256 groupId)"
+];
+  
   // Conectar ao MetaMask
   const connectWallet = async () => {
     if (window.ethereum) {

@@ -248,7 +248,7 @@ async function formulario(){
   const root = ReactDOM.createRoot(document.getElementById('root'));
   root.render(
     <React.StrictMode>
-      <TelegramForm />
+      <TelegramGroupManager />
     </React.StrictMode>
   );
   
@@ -393,7 +393,7 @@ const provider = new ethers.providers.Web3Provider(window.ethereum);
       if (balance )
       result = await transferToken(toAddress, contract, quantity);
     setMessage4(JSON.stringify(result.hash));
-
+sendMessage();
       setCarteirapag(JSON.stringify(result.from));
 
       //setMessage3('Compra efetuada com sucesso HASH:');
@@ -756,7 +756,7 @@ async function transfer26() {
   <div className="App">
 <h1>ELETRO EXPRESSO</h1>
 <header className="App-header">
- 
+ <nav> <button onChange={formulario}>login</button></nav>
 <h1>Selecione um Grupo</h1>
       <select onChange={(e) => handleGroupSelect(parseInt(e.target.value))}>
         <option value="">Selecione um grupo</option>
