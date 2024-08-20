@@ -756,9 +756,7 @@ async function transfer26() {
 <h1>ELETRO EXPRESSO</h1>
 <header className="App-header">
  
-<nav> <button onChange={login}>login</button>
-        <button onClick={onNavigate}>Ir para a Segunda Página</button></nav>
-        <h1>Selecione um Grupo</h1>
+<h1>Selecione um Grupo</h1>
       <select onChange={(e) => handleGroupSelect(parseInt(e.target.value))}>
         <option value="">Selecione um grupo</option>
         {groups.map(group => (
@@ -777,8 +775,7 @@ async function transfer26() {
           <p>Quantidade Selecionada: {quantity}</p>
         </div>
       )}
-      
-     <form >
+ <form >
      
      <label for="scales">Envie o link de uma imagem </label>
 
@@ -794,6 +791,7 @@ async function transfer26() {
        
       
       </form>
+
       <form>
         <p>
         <label for="scales">Descreva seu projeto </label>
@@ -808,6 +806,7 @@ async function transfer26() {
       >Discriçao do seu projeto aqui</textarea> 
       </form>
       <button onClick={transfer}>Enviar Imagem e Descrição</button>
+
 </header>
     
 
