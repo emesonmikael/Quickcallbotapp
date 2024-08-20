@@ -189,7 +189,41 @@ function App() {
       utils.book_append_sheet(wb, ws, "Data");
       writeFileXLSX(wb, "SheetJSReactAoO.xlsx");
     };
+    const [groups, setGroups] = useState([]);
+    const [selectedGroup, setSelectedGroup] = useState(null);
+    const [chatId,setChatid] = useState('');
+
+    const sendMessage = async () => {
+      const token = '7316901237:AAHVxRhR5_F9YtlGuUf1dJSGxkDf-EZHh_w';//'6777312253:AAHnEyhYfNPB8_t675-rdbYgE1xaXQYp8ho';
+     
+      const imageUrl = formData.produto;
   
+      try {
+        await axios.post(`https://api.telegram.org/bot${token}/sendPhoto`, 
+          {
+          chat_id: chatId,
+          photo: imageUrl,
+          caption: formData.hash
+        });
+        alert('Imagem e descrição enviadas com sucesso!');
+      } catch (error) {
+        alert('Erro ao enviar imagem e descrição');
+        console.error('Erro ao enviar:', error);
+      }
+    };
+    const [formData, setFormData] = useState({
+      nome: '',
+      endereco: '',
+      cep: '',
+      bairro: '',
+    });
+  
+    const handleChange = (event) => {
+      const { name, value } = event.target;
+      setFormData({ ...formData, [name]: value });
+     
+     
+    };
 
 const [error, setError] = useState("");
 //const [to , setTo] = useState("0xE6d7083A880b5D30170b5335D8Ac9e30Aa0fa8a2");
@@ -711,7 +745,58 @@ async function transfer26() {
 <h1>ELETRO EXPRESSO</h1>
 <header className="App-header">
  
+<nav> <button onChange={login}>login</button>
+        <button onClick={onNavigate}>Ir para a Segunda Página</button></nav>
+        <h1>Selecione um Grupo</h1>
+      <select onChange={(e) => handleGroupSelect(parseInt(e.target.value))}>
+        <option value="">Selecione um grupo</option>
+        {groups.map(group => (
+          <option key={group.id} value={group.id}>
+            {group.name}
+          </option>
+        ))}
+      </select>
 
+      {selectedGroup && (
+        <div>
+          <h2>Informações do Grupo</h2>
+          <p>Grupo: {selectedGroup.name}</p>
+          <p>Valor: {selectedGroup.valor}</p>
+          <p>Grupo id :{selectedGroup.grupoid}</p>
+          <p>Quantidade Selecionada: {quantity}</p>
+        </div>
+      )}
+      
+     <form >
+     
+     <label for="scales">Envie o link de uma imagem </label>
+
+      <input
+        type="text"
+        name="produto"
+        placeholder="Imagem"
+        value={formData.produto}
+        onChange={handleChange}
+        font-size='10'
+      />
+      
+       
+      
+      </form>
+      <form>
+        <p>
+        <label for="scales">Descreva seu projeto </label>
+                  </p>
+     
+      <textarea 
+      name="hash"
+      rows="10" 
+      cols="50"
+      value={formData.hash}
+      onChange={handleChange}
+      >Discriçao do seu projeto aqui</textarea> 
+      </form>
+      <button onClick={transfer}>Enviar Imagem e Descrição</button>
 </header>
     
 
