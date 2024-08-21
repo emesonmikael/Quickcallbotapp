@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { getContract } from './contract';
+import { ethers } from 'ethers';
 
 const PayGroup = () => {
   const [groupId, setGroupId] = useState('');

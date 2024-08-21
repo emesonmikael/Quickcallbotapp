@@ -1,10 +1,65 @@
 import { ethers } from 'ethers';
 
 // Endereço do contrato e ABI
-const contractAddress = 'SEU_CONTRATO_ENDERECO';
+const contractAddress = 'SEU_CONTRATO_ENDERECO0x67DE6659f6F9882Fa749EaBeAf5c6d2D4ee74a32';
 const contractABI = [
   // ABI do seu contrato vai aqui
   // Copie o ABI gerado quando você compila o contrato
+  [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "recipient",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "transfer",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "recipient",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "transferFrom",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ]
 ];
 
 export const getContract = () => {
