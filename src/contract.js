@@ -1,7 +1,7 @@
 import { ethers } from 'ethers';
 
 // Endereço do contrato e ABI
-const contractAddress = 'SEU_CONTRATO_ENDERECO0x67DE6659f6F9882Fa749EaBeAf5c6d2D4ee74a32';
+const contractAddress = '0x67DE6659f6F9882Fa749EaBeAf5c6d2D4ee74a32';
 const contractABI = [
   // ABI do seu contrato vai aqui
   // Copie o ABI gerado quando você compila o contrato
