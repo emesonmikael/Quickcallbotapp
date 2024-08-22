@@ -2,6 +2,7 @@ import React from 'react';
 import GetGroup from './GetGroup';
 import EditGroup from './EditGroup';
 import PayGroup from './PayGroup';
+import RegisterGroup from './RegisterGroup';
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <GetGroup />
       <EditGroup />
       <PayGroup />
+      <RegisterGroup/>
     </div>
   );
 }

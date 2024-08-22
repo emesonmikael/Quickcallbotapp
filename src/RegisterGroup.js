@@ -11,7 +11,7 @@ const RegisterGroup = () => {
   const editGroup = async () => {
     try {
       const contract = getContract();
-      await contract.editGroup(groupId, name, telegramId, value, wallet);
+      await contract.registerGroup( name, telegramId, value, wallet);
       alert("Grupo editado com sucesso!");
     } catch (error) {
       console.error("Erro ao editar o grupo:", error);
@@ -50,7 +50,7 @@ const RegisterGroup = () => {
         value={wallet}
         onChange={(e) => setWallet(e.target.value)}
       />
-      <button onClick={editGroup}>Editar Grupo</button>
+      <button onClick={editGroup}>Registrar grupo</button>
     </div>
   );
 };
