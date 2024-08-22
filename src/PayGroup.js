@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { getContract } from './contract';
 import { ethers } from 'ethers';
+import EditGroup from './EditGroup';
 
 const PayGroup = () => {
   const [groupId, setGroupId] = useState('');
@@ -31,6 +32,7 @@ const PayGroup = () => {
         onChange={(e) => setAmount(e.target.value)}
       />
       <button onClick={payGroup}>Pagar</button>
+    
     </div>
   );
 };
