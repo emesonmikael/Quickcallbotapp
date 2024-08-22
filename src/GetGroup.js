@@ -9,12 +9,14 @@ const GetGroup = () => {
     try {
       const contract = getContract();
       const data = await contract.getGroup(groupId);
+     
       setGroupData({
         name: data[0],
         telegramId: data[1],
         value: data[2],
         wallet: data[3],
       });
+      console.log(JSON.stringify(data));
     } catch (error) {
       console.error("Erro ao buscar o grupo:", error);
     }
