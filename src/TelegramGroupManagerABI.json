@@ -2,6 +2,7 @@
     "function registerGroup(string memory _name, string memory _telegramId, uint256 _value, address _wallet) public onlyOwner ",
     "function editGroup(uint256 groupId, string memory _name, string memory _telegramId, uint256 _value, address _wallet) public onlyOwner ",
     "function pay(uint256 groupId, uint256 amount) public",
+    "function getGroupCount() public view returns (uint256)",
       "function getGroup(uint256 groupId) public view returns (string memory, string memory, uint256, address)"
     
 ]

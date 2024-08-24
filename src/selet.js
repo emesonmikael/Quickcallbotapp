@@ -22,7 +22,7 @@ const App = () => {
         const contractInstance = new web3Instance.eth.Contract(TelegramGroupManagerABI, TelegramGroupManagerAddress);
         setContract(contractInstance);
 
-        const groupCount = await contractInstance.methods.groupCount().call();
+        const groupCount = await contractInstance.methods.getGroupCount().call();
         setGroupCount(groupCount);
 
         const groupsData = [];
