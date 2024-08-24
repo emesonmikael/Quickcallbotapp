@@ -59,7 +59,7 @@
     "telegraf": "^4.11.2",
     "terser-webpack-plugin": "^5.2.5",
     "web-vitals": "^2.1.4",
-    "web3": "^1.10.0",
+    "web3": "^1.10.4",
     "webpack": "^5.64.4",
     "webpack-dev-server": "^4.6.0",
     "webpack-manifest-plugin": "^4.0.2",

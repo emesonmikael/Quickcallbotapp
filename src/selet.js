@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Web3 from 'web3';
 import TelegramGroupManagerABI from './TelegramGroupManagerABI.json'; // ABI do contrato
 
-const TelegramGroupManagerAddress = 'ENDEREÇO_DO_CONTRATO';
+const TelegramGroupManagerAddress = '0x671661fd500296A35F83BE32d96A367B98F4b87b';
 
 const App = () => {
   const [web3, setWeb3] = useState(null);
@@ -72,4 +72,4 @@ const App = () => {
   );
 };
 
-export default App
+export default App;
