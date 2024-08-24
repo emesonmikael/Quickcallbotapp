@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Web3 from 'web3';
-import TelegramGroupManagerABI from './TelegramGroupManagerABI.json'; // ABI do contrato
+import TelegramGroupManagerABI from '../TelegramGroupManagerABI.json';
 
-const TelegramGroupManagerAddress = '0x1973030c1B338aC87C764DAdF010Ffe98c68c705';
+const TelegramGroupManagerAddress = 'ENDEREÇO_DO_CONTRATO';
 
-const App = () => {
+const GroupSelection = () => {
   const [web3, setWeb3] = useState(null);
   const [contract, setContract] = useState(null);
   const [groupCount, setGroupCount] = useState(0);
@@ -13,7 +13,6 @@ const App = () => {
 
   useEffect(() => {
     const initWeb3 = async () => {
-      // Conecte-se ao Metamask
       if (window.ethereum) {
         const web3Instance = new Web3(window.ethereum);
         await window.ethereum.request({ method: 'eth_requestAccounts' });
@@ -72,4 +71,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default GroupSelection;

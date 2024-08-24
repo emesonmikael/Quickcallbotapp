@@ -12,7 +12,7 @@ const TelegramGroupManager = () => {
   const [value, setValue] = useState('');
   const [wallet, setWallet] = useState('');
 
-  const contractAddress = '0x67DE6659f6F9882Fa749EaBeAf5c6d2D4ee74a32';
+  const contractAddress = '0x1973030c1B338aC87C764DAdF010Ffe98c68c705';
   const usdtTokenAddress = '0x8d008B313C1d6C7fE2982F62d32Da7507cF43551';
   const contractABI = [
    "function registerGroup(string memory _name, string memory _telegramId, uint256 _value, address _wallet) public onlyOwner ",
