@@ -11,12 +11,12 @@ const GetGroup = () => {
       const data = await contract.getGroup(groupId);
      
       setGroupData({
-        name: data[0],
-        telegramId: data[1],
-        value: data[2],
-        wallet: data[3],
+        name:JSON.stringify(data[0]),
+        telegramId: JSON.stringify(data[1]),
+        value: JSON.parse(data[2]),
+        wallet: JSON.stringify(data[3]),
       });
-      console.log(JSON.stringify(data));
+      console.log(JSON.stringify(data[3]));
     } catch (error) {
       console.error("Erro ao buscar o grupo:", error);
     }
