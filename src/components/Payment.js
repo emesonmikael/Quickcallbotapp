@@ -2,7 +2,7 @@ import React, { useState,useEffect } from 'react';
 import Web3 from 'web3';
 import TelegramGroupManagerABI from '../TelegramGroupManagerABI.json';
 
-const TelegramGroupManagerAddress = '0x67DE6659f6F9882Fa749EaBeAf5c6d2D4ee74a32';
+const TelegramGroupManagerAddress = '0x1973030c1B338aC87C764DAdF010Ffe98c68c705';
 
 const Payment = () => {
   const [web3, setWeb3] = useState(null);
