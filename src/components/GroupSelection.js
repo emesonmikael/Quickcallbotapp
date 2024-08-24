@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Web3 from 'web3';
 import TelegramGroupManagerABI from '../TelegramGroupManagerABI.json';
 
-const TelegramGroupManagerAddress = 'ENDEREÇO_DO_CONTRATO';
+const TelegramGroupManagerAddress = '0x1973030c1B338aC87C764DAdF010Ffe98c68c705';
 
 const GroupSelection = () => {
   const [web3, setWeb3] = useState(null);
@@ -21,11 +21,11 @@ const GroupSelection = () => {
         const contractInstance = new web3Instance.eth.Contract(TelegramGroupManagerABI, TelegramGroupManagerAddress);
         setContract(contractInstance);
 
-        const groupCount = await contractInstance.methods.groupCount().call();
-        setGroupCount(groupCount);
+        const count = await contractInstance.methods.getGroupCount().call();
+        setGroupCount(count);
 
         const groupsData = [];
-        for (let i = 0; i < groupCount; i++) {
+        for (let i = 0; i < count; i++) {
           const group = await contractInstance.methods.getGroup(i).call();
           groupsData.push(group);
         }
