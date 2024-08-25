@@ -5,6 +5,7 @@ const GetGroup = () => {
   const [groupId, setGroupId] = useState('');
   const [groupData, setGroupData] = useState(null);
   const [groupCount, setGroupCount] = useState(0);
+  const [groups, setGroups] = useState([]);
 
   
 
@@ -21,6 +22,7 @@ const GetGroup = () => {
         groupsData.push(group);
           console.log(group);
       }
+      setGroups(groupsData);
      
      setGroupData({
       name:JSON.stringify(data[0]),
