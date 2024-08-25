@@ -1,6 +1,6 @@
 import { ethers } from 'ethers';
 
-const CONTRACT_ADDRESS = 'ENDEREÇO_DO_CONTRATO';
+const CONTRACT_ADDRESS = '0xEb20948C752E4ea23EEa44f2B950d9F27F785F2F';
 const ABI = [
   "function editGroup(uint256 groupId, string memory _name, string memory _telegramId, string memory _value, address _wallet) public onlyOwner ",
   "function pay(uint256 groupId, uint256 amount) public",
