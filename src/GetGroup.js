@@ -40,6 +40,7 @@ const GetGroup = () => {
   };
   return (
     <div>
+   
       <input
         type="number"
         placeholder="ID do Grupo"
@@ -48,15 +49,21 @@ const GetGroup = () => {
       />
       <button onClick={fetchGroup}>Buscar Grupo</button>
 
-      {groupData && (
-        <div>
-          <h3>Detalhes do Grupo:</h3>
-          <p>Nome: {groupData.name}</p>
-          <p>ID do Telegram: {groupData.telegramId}</p>
-          <p>Valor: {groupData.value}</p>
-          <p>Carteira: {groupData.wallet}</p>
-        </div>
+      <h1>Selecionar Grupo do Telegram</h1>
+      {groupCount > 0 ? (
+        <select onChange={handleGroupSelect}>
+          <option value="">Selecione um grupo</option>
+          {groups.map((group, index) => (
+            <option key={index} value={index}>
+              {group[0]} - ID: {group[1]} - Carteira: {group[3]}
+            </option>
+          ))}
+        </select>
+      ) : (
+        <p>Nenhum grupo cadastrado.</p>
       )}
+
+      
     </div>
   );
 };
