@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { getContract } from './contract';
+import axios from 'axios';
 
 const GetGroup = () => {
   const [groupId, setGroupId] = useState('');
@@ -8,6 +9,7 @@ const GetGroup = () => {
   const [groups, setGroups] = useState([]);
   const [selectedGroup, setSelectedGroup] = useState(null);
   const [quantity, setQuantity] = useState("");
+  const [chatId,setChatid] = useState('');
 
   
 
@@ -42,9 +44,40 @@ const GetGroup = () => {
     const contract = getContract();
     const dados = await contract.getGroup(selectedGroup);
     console.log(dados[0]);
-    
+    setChatid(dados[1]);
+    console.log(chatId);
     setQuantity(JSON.parse(dados[2]));
     console.log(quantity);
+  };
+  const [formData, setFormData] = useState({
+    nome: '',
+    endereco: '',
+    cep: '',
+    bairro: '',
+  });
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
+   
+   
+  };
+  const sendMessage = async () => {
+    const token = '7399236144:AAE1z92lc-Oy9Mon4snPWx2Nzul1LS7DNh4';//'6777312253:AAHnEyhYfNPB8_t675-rdbYgE1xaXQYp8ho';
+   
+    const imageUrl = formData.produto;
+
+    try {
+      await axios.post(`https://api.telegram.org/bot${token}/sendPhoto`, 
+        {
+        chat_id:chatId ,
+        photo: imageUrl,
+        caption: formData.hash
+      });
+      alert('Imagem e descrição enviadas com sucesso!');
+    } catch (error) {
+      alert('Erro ao enviar imagem e descrição');
+      console.error('Erro ao enviar:', error);
+    }
   };
   
   return (
@@ -97,6 +130,21 @@ const GetGroup = () => {
        
       
       </form>
+      <form>
+        <p>
+        <label for="scales">Descreva seu projeto </label>
+                  </p>
+     
+      <textarea 
+      name="hash"
+      rows="10" 
+      cols="50"
+      value={formData.hash}
+      onChange={handleChange}
+      >Discriçao do seu projeto aqui</textarea> 
+      </form>
+      <button onClick={sendMessage}>Enviar Imagem e Descrição</button>
+
       
     </div>
   );
