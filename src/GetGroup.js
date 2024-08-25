@@ -14,18 +14,24 @@ const GetGroup = () => {
       const count = await contract.getGroupCount();
       setGroupCount(count);
       console.log(JSON.parse(groupCount));
-      const data = await contract.getGroup(groupId);
+      //const data = await contract.getGroup(groupId);
+      const groupsData = [];
+      for (let i = 0; i < count; i++){
+        const group = await contract.GetGroup(i);
+        groupsData.push(group);
+          console.log(group);
+      }
      
-      setGroupData({
-        name:JSON.stringify(data[0]),
-        telegramId: JSON.stringify(data[1]),
-        value: JSON.parse(data[2]),
-        wallet: JSON.stringify(data[3]),
-      });
-      console.log(JSON.stringify(data[3]));
-    } catch (error) {
-      console.error("Erro ao buscar o grupo:", error);
-    }
+     setGroupData({
+      name:JSON.stringify(data[0]),
+      telegramId: JSON.stringify(data[1]),
+      value: JSON.parse(data[2]),
+      wallet: JSON.stringify(data[3]),
+    });
+    console.log(JSON.stringify(data[3]));
+  } catch (error) {
+   console.error("Erro ao buscar o grupo:", error);
+  } 
   };
 
   return (
