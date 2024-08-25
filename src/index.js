@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App3';
+import App from './App2';
 import reportWebVitals from './reportWebVitals';
 import TelegramGroupManager from './meta';
+import GroupSelection from './components/GroupSelection';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

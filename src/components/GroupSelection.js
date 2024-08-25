@@ -23,11 +23,14 @@ const GroupSelection = () => {
 
         const count = await contractInstance.methods.getGroupCount().call();
         setGroupCount(count);
+        console.log(count);
 
         const groupsData = [];
         for (let i = 0; i < count; i++) {
           const group = await contractInstance.methods.getGroup(i).call();
           groupsData.push(group);
+          console.log(group);
+
         }
         setGroups(groupsData);
       } else {
