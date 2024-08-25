@@ -7,6 +7,7 @@ const GetGroup = () => {
   const [groupCount, setGroupCount] = useState(0);
   const [groups, setGroups] = useState([]);
   const [selectedGroup, setSelectedGroup] = useState(null);
+  const [quantity, setQuantity] = useState("");
 
   
 
@@ -26,7 +27,7 @@ const GetGroup = () => {
       setGroups(groupsData);
      
      setGroupData({
-      name:JSON.stringify(data[0]),
+      name:JSON.stringify([0]),
       telegramId: JSON.stringify(data[1]),
       value: JSON.parse(data[2]),
       wallet: JSON.stringify(data[3]),
@@ -36,8 +37,14 @@ const GetGroup = () => {
    console.error("Erro ao buscar o grupo:", error);
   } 
   };
-  const handleGroupSelect = (event) => {
+  const handleGroupSelect = async (event) => {
     setSelectedGroup(event.target.value);
+    const contract = getContract();
+    const dados = await contract.getGroup(selectedGroup);
+    console.log(dados[0]);
+    
+    setQuantity(JSON.parse(dados[2]));
+    console.log(quantity);
   };
   
   return (
@@ -61,10 +68,35 @@ const GetGroup = () => {
             </option>
           ))}
         </select>
+        
       ) : (
         <p>Nenhum grupo cadastrado.</p>
       )}
+    {selectedGroup !== null && (
+        <div>
+          <h2>Grupo Selecionado</h2>
+          <p>Nome: </p>
+          <p>Telegram ID: </p>
+          <p>Valor: {quantity}</p>
+          <p>Carteira:</p>
+        </div>
+      )}
+      <form >
+     
+     <label for="scales">Envie o link de uma imagem </label>
 
+      <input
+        type="text"
+        name="produto"
+        placeholder="Imagem"
+        value={formData.produto}
+        onChange={handleChange}
+        font-size='10'
+      />
+      
+       
+      
+      </form>
       
     </div>
   );
