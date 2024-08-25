@@ -1,14 +1,15 @@
 import { ethers } from 'ethers';
 
 // Endereço do contrato e ABI
-const contractAddress = '0x67DE6659f6F9882Fa749EaBeAf5c6d2D4ee74a32';
+const contractAddress = '0x1973030c1B338aC87C764DAdF010Ffe98c68c705';
 const contractABI = [
   // ABI do seu contrato vai aqui
   // Copie o ABI gerado quando você compila o contrato
   "function registerGroup(string memory _name, string memory _telegramId, uint256 _value, address _wallet) public onlyOwner ",
   "function editGroup(uint256 groupId, string memory _name, string memory _telegramId, uint256 _value, address _wallet) public onlyOwner ",
   "function pay(uint256 groupId, uint256 amount) public",
-    "function getGroup(uint256 groupId) public view returns (string memory, string memory, uint256, address)"
+  "function getGroupCount() public view returns (uint256)",
+  "function getGroup(uint256 groupId) public view returns (string memory, string memory, uint256, address)"
   
 ];
 
