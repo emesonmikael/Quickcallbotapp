@@ -4,10 +4,16 @@ import { getContract } from './contract';
 const GetGroup = () => {
   const [groupId, setGroupId] = useState('');
   const [groupData, setGroupData] = useState(null);
+  const [groupCount, setGroupCount] = useState(0);
+
+  
 
   const fetchGroup = async () => {
     try {
       const contract = getContract();
+      const count = await contract.getGroupCount();
+      setGroupCount(count);
+      console.log(JSON.parse(groupCount));
       const data = await contract.getGroup(groupId);
      
       setGroupData({
