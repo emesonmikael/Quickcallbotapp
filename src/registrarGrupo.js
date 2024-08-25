@@ -1,4 +1,9 @@
-const contractAddress = "SEU_CONTRATO_ENDERECO"; // Coloque o endereço do seu contrato aqui
+import { ethers} from "ethers";
+import { useState } from "react";
+import TelegramGroupManagerABI from '../TelegramGroupManagerABI.json';
+
+const contractAddress = "0x1973030c1B338aC87C764DAdF010Ffe98c68c705"; // Coloque o endereço do seu contrato aqui
+const abi = TelegramGroupManagerABI;
 
 export default function App() {
     const [provider, setProvider] = useState(null);
@@ -48,7 +53,7 @@ export default function App() {
         <div>
             <button onClick={connectWallet}>Conectar à Carteira</button>
 
-            <button onClick={() => registerGroup("Nome do Grupo", "TelegramID", "0xWalletAddress")}>
+            <button onClick={ registerGroup("Nome do Grupo", "TelegramID", "0xWalletAddress")}>
                 Registrar Grupo
             </button>
 

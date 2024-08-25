@@ -11,7 +11,7 @@ const EditGroup = () => {
   const editGroup = async () => {
     try {
       const contract = getContract();
-      await contract.editGroup(groupId, name, telegramId, value, wallet);
+      await contract.editGroup(groupId, name, telegramId,value,  wallet);
       alert("Grupo editado com sucesso!");
     } catch (error) {
       console.error("Erro ao editar o grupo:", error);

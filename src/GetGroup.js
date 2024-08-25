@@ -31,7 +31,7 @@ const GetGroup = () => {
       value: JSON.parse(data[2]),
       wallet: JSON.stringify(data[3]),
     });
-    console.log(JSON.stringify(data[3]));
+   // console.log(JSON.stringify(group[3]));
   } catch (error) {
    console.error("Erro ao buscar o grupo:", error);
   } 

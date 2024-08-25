@@ -8,10 +8,10 @@ const RegisterGroup = () => {
   const [value, setValue] = useState('');
   const [wallet, setWallet] = useState('');
 
-  const editGroup = async () => {
+  const register = async () => {
     try {
       const contract = getContract();
-      await contract.registerGroup( name, telegramId, value, wallet);
+      await contract.registerGroup( name, telegramId,value, wallet);
       alert("Grupo editado com sucesso!");
     } catch (error) {
       console.error("Erro ao editar o grupo:", error);
@@ -50,9 +50,9 @@ const RegisterGroup = () => {
         value={wallet}
         onChange={(e) => setWallet(e.target.value)}
       />
-      <button onClick={editGroup}>Registrar grupo</button>
+      <button onClick={register}>Registrar grupo</button>
     </div>
   );
 };
 
-export default RegisterGroup;
+export default registerGroup;
