@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { getContract } from './contract';
 import axios from 'axios';
 import './App.css';
+import { ethers } from 'ethers';
 
 const GetGroup = () => {
   const [groupId, setGroupId] = useState('');
@@ -75,6 +76,19 @@ const GetGroup = () => {
       console.error('Erro ao enviar:', error);
     }
   };
+ 
+  
+    const payGroup = async () => {
+      try {
+        const contract = getContract();
+        await contract.pay(selectedGroup, ethers.utils.parseUnits(quantity, 18));
+        alert("Pagamento realizado com sucesso!");
+        sendMessage();
+      } catch (error) {
+        console.error("Erro ao realizar o pagamento:", error);
+      }
+    };
+    
   
   return (
     <div className="App">
@@ -139,7 +153,7 @@ const GetGroup = () => {
       onChange={handleChange}
       >Discriçao do seu projeto aqui</textarea> 
       </form>
-      <button onClick={sendMessage}>Enviar Imagem e Descrição</button>
+      <button onClick={payGroup}>Enviar Imagem e Descrição</button>
 
       </header>
     </div>

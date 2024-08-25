@@ -1,75 +1,52 @@
 import React, { useState, useEffect } from 'react';
-import Web3 from 'web3';
-import TelegramGroupManagerABI from '../TelegramGroupManagerABI.json';
+import { getContract } from '../contractConfig';
+import { ethers } from 'ethers';
 
-const TelegramGroupManagerAddress = '0x1973030c1B338aC87C764DAdF010Ffe98c68c705';
-
-const GroupSelection = () => {
-  const [web3, setWeb3] = useState(null);
-  const [contract, setContract] = useState(null);
-  const [groupCount, setGroupCount] = useState(0);
-  const [selectedGroup, setSelectedGroup] = useState(null);
+const GroupSelection = ({ setSelectedGroup }) => {
   const [groups, setGroups] = useState([]);
+  const [selectedGroupId, setSelectedGroupId] = useState(null);
 
   useEffect(() => {
-    const initWeb3 = async () => {
-      if (window.ethereum) {
-        const web3Instance = new Web3(window.ethereum);
-        await window.ethereum.request({ method: 'eth_requestAccounts' });
-        setWeb3(web3Instance);
+    const fetchGroups = async () => {
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const contract = getContract(provider);
+      const groupCount = await contract.getGroupCount();
 
-        const contractInstance = new web3Instance.eth.Contract(TelegramGroupManagerABI, TelegramGroupManagerAddress);
-        setContract(contractInstance);
-
-        const count = await contractInstance.methods.getGroupCount().call();
-        setGroupCount(count);
-        console.log(count);
-
-        const groupsData = [];
-        for (let i = 0; i < count; i++) {
-          const group = await contractInstance.methods.getGroup(i).call();
-          groupsData.push(group);
-          console.log(group);
-
-        }
-        setGroups(groupsData);
-      } else {
-        console.error("Metamask não detectado");
+      let groupList = [];
+      for (let i = 0; i < groupCount; i++) {
+        const group = await contract.getGroup(i);
+        groupList.push({
+          id: i,
+          name: group[0],
+          telegramId: group[1],
+          value: group[2],
+          wallet: group[3],
+        });
       }
+      setGroups(groupList);
     };
 
-    initWeb3();
+    fetchGroups();
   }, []);
 
-  const handleGroupSelect = (event) => {
-    setSelectedGroup(event.target.value);
+  const handleSelectGroup = (groupId) => {
+    const group = groups.find(g => g.id === groupId);
+    setSelectedGroup(group);
+    setSelectedGroupId(groupId);
   };
 
   return (
     <div>
-      <h1>Selecionar Grupo do Telegram</h1>
-      {groupCount > 0 ? (
-        <select onChange={handleGroupSelect}>
-          <option value="">Selecione um grupo</option>
-          {groups.map((group, index) => (
-            <option key={index} value={index}>
-              {group[0]} - ID: {group[1]} - Carteira: {group[3]}
-            </option>
-          ))}
-        </select>
-      ) : (
-        <p>Nenhum grupo cadastrado.</p>
-      )}
-
-      {selectedGroup !== null && (
-        <div>
-          <h2>Grupo Selecionado</h2>
-          <p>Nome: {groups[selectedGroup][0]}</p>
-          <p>Telegram ID: {groups[selectedGroup][1]}</p>
-          <p>Valor: {groups[selectedGroup][2]}</p>
-          <p>Carteira: {groups[selectedGroup][3]}</p>
-        </div>
-      )}
+      <h2>Select a Group</h2>
+      <ul>
+        {groups.map(group => (
+          <li key={group.id}>
+            <button onClick={() => handleSelectGroup(group.id)}>
+              {group.name} - {group.telegramId}
+            </button>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
