@@ -17,7 +17,7 @@ const GetGroup = () => {
       //const data = await contract.getGroup(groupId);
       const groupsData = [];
       for (let i = 0; i < count; i++){
-        const group = await contract.GetGroup(i);
+        const group = await contract.getGroup(i);
         groupsData.push(group);
           console.log(group);
       }
