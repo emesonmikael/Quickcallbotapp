@@ -35,7 +35,9 @@ const GetGroup = () => {
    console.error("Erro ao buscar o grupo:", error);
   } 
   };
-
+  const handleGroupSelect = (event) => {
+    setSelectedGroup(event.target.value);
+  };
   return (
     <div>
       <input
