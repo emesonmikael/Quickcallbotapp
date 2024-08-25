@@ -6,6 +6,7 @@ const GetGroup = () => {
   const [groupData, setGroupData] = useState(null);
   const [groupCount, setGroupCount] = useState(0);
   const [groups, setGroups] = useState([]);
+  const [selectedGroup, setSelectedGroup] = useState(null);
 
   
 
@@ -15,7 +16,7 @@ const GetGroup = () => {
       const count = await contract.getGroupCount();
       setGroupCount(count);
       console.log(JSON.parse(groupCount));
-      //const data = await contract.getGroup(groupId);
+      const data = 0;
       const groupsData = [];
       for (let i = 0; i < count; i++){
         const group = await contract.getGroup(i);
@@ -38,6 +39,7 @@ const GetGroup = () => {
   const handleGroupSelect = (event) => {
     setSelectedGroup(event.target.value);
   };
+  
   return (
     <div>
    
@@ -55,7 +57,7 @@ const GetGroup = () => {
           <option value="">Selecione um grupo</option>
           {groups.map((group, index) => (
             <option key={index} value={index}>
-              {group[0]} - ID: {group[1]} - Carteira: {group[3]}
+            Grupo:  {group[0]} - VALOR: {JSON.parse(group[2])} 
             </option>
           ))}
         </select>

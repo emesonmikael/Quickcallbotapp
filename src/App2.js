@@ -11,7 +11,7 @@ function App() {
       <h1>Gerenciamento de Grupos do Telegram</h1>
       <GetGroup />
       <EditGroup />
-      <PayGroup />
+      
       <RegisterGroup/>
     </div>
   );
