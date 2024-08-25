@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { getContract } from './contract';
 import axios from 'axios';
+import './App.css';
 
 const GetGroup = () => {
   const [groupId, setGroupId] = useState('');
@@ -28,12 +29,7 @@ const GetGroup = () => {
       }
       setGroups(groupsData);
      
-     setGroupData({
-      name:JSON.stringify([0]),
-      telegramId: JSON.stringify(data[1]),
-      value: JSON.parse(data[2]),
-      wallet: JSON.stringify(data[3]),
-    });
+     
    // console.log(JSON.stringify(group[3]));
   } catch (error) {
    console.error("Erro ao buscar o grupo:", error);
@@ -81,8 +77,8 @@ const GetGroup = () => {
   };
   
   return (
-    <div>
-   
+    <div className="App">
+   <header className="App-header">
       <input
         type="number"
         placeholder="ID do Grupo"
@@ -145,7 +141,7 @@ const GetGroup = () => {
       </form>
       <button onClick={sendMessage}>Enviar Imagem e Descrição</button>
 
-      
+      </header>
     </div>
   );
 };
