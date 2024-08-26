@@ -44,7 +44,7 @@ const SelectGroupPage = ({ setSelectedGroup }) => {
    
   };
   const sendMessage = async () => {
-    const token = '7316901237:AAHVxRhR5_F9YtlGuUf1dJSGxkDf-EZHh_w';//'6777312253:AAHnEyhYfNPB8_t675-rdbYgE1xaXQYp8ho';
+    const token = '7399236144:AAE1z92lc-Oy9Mon4snPWx2Nzul1LS7DNh4';//'6777312253:AAHnEyhYfNPB8_t675-rdbYgE1xaXQYp8ho';
    
     const imageUrl = formData.produto;
 
