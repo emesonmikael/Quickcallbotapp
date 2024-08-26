@@ -3,10 +3,12 @@ import React, { useState } from 'react';
 import GroupSelection from '../components/GroupSelection';
 import { getContract } from '../contractConfig';
 import { ethers } from 'ethers';
+import axios from 'axios';
 
 const SelectGroupPage = ({ setSelectedGroup }) => {
   const [selectedGroup, setSelectedGroupState] = useState(null);
   const [amount, setAmount] = useState('');
+  const [chatId,setChatid] = useState('');
 
   const handlePayment = async () => {
     if (!selectedGroup) {
@@ -25,6 +27,37 @@ const SelectGroupPage = ({ setSelectedGroup }) => {
     } catch (error) {
       console.error('Falha no pagamento:', error);
       alert('Falha no pagamento');
+    }
+  };
+  const [formData, setFormData] = useState({
+    nome: '',
+    endereco: '',
+    cep: '',
+    bairro: '',
+  });
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
+   
+   
+  };
+  const sendMessage = async () => {
+    const token = '7316901237:AAHVxRhR5_F9YtlGuUf1dJSGxkDf-EZHh_w';//'6777312253:AAHnEyhYfNPB8_t675-rdbYgE1xaXQYp8ho';
+   
+    const imageUrl = formData.produto;
+
+    try {
+      await axios.post(`https://api.telegram.org/bot${token}/sendPhoto`, 
+        {
+        chat_id: chatId,
+        photo: imageUrl,
+        caption: formData.hash
+      });
+      alert('Imagem e descrição enviadas com sucesso!');
+    } catch (error) {
+      alert('Erro ao enviar imagem e descrição');
+      console.error('Erro ao enviar:', error);
     }
   };
 
