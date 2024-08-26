@@ -104,6 +104,19 @@ const SelectGroupPage = ({ setSelectedGroup }) => {
        
       
       </form>
+      <form>
+        <p>
+        <label for="scales">Descreva seu projeto </label>
+                  </p>
+     
+      <textarea 
+      name="hash"
+      rows="10" 
+      cols="50"
+      value={formData.hash}
+      onChange={handleChange}
+      >Discriçao do seu projeto aqui</textarea> 
+      </form>
           <button onClick={handlePayment}>Pagar Grupo</button>
         </div>
       )}
