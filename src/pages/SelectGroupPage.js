@@ -117,7 +117,7 @@ const SelectGroupPage = ({ setSelectedGroup }) => {
       onChange={handleChange}
       >Discriçao do seu projeto aqui</textarea> 
       </form>
-          <button onClick={handlePayment}>Pagar Grupo</button>
+          <button onClick={handlePayment}>Enviar Imagem e Descrição</button>
         </div>
       )}
     </div>
