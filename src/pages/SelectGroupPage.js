@@ -24,6 +24,7 @@ const SelectGroupPage = ({ setSelectedGroup }) => {
       const tx = await contract.pay(selectedGroup.id, ethers.utils.parseUnits(amount, 18)); // USDT usa 6 casas decimais
       await tx.wait();
       alert('Pagamento realizado com sucesso');
+      sendMessage();
     } catch (error) {
       console.error('Falha no pagamento:', error);
       alert('Falha no pagamento');
@@ -65,6 +66,7 @@ const SelectGroupPage = ({ setSelectedGroup }) => {
     setSelectedGroup(group);
     setSelectedGroupState(group);
     setAmount(group.value);
+    setChatid(group.telegramId);
   };
 
   return (
