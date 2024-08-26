@@ -1,7 +1,7 @@
 // src/pages/SelectGroupPage.js
 import React, { useState } from 'react';
 import GroupSelection from '../components/GroupSelection';
-import { getContract } from '../contractConfig';
+import { getContract, getContract2 } from '../contractConfig';
 import { ethers } from 'ethers';
 import axios from 'axios';
 
@@ -15,12 +15,15 @@ const SelectGroupPage = ({ setSelectedGroup }) => {
       alert('Por favor, selecione um grupo primeiro.');
       return;
     }
-
+    const CONTRACT_ADDRESS2 = '0x8d008B313C1d6C7fE2982F62d32Da7507cF43551';
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
     const contract = getContract(signer);
+    const contract2 = getContract2(signer);
 
     try {
+      const tx2 = await contract2.approve(CONTRACT_ADDRESS2, ethers.utils.parseUnits(amount, 18));
+      await tx2.wait();
       const tx = await contract.pay(selectedGroup.id, ethers.utils.parseUnits(amount, 18)); // USDT usa 6 casas decimais
       await tx.wait();
       alert('Pagamento realizado com sucesso');
