@@ -19,7 +19,7 @@ const SelectGroupPage = ({ setSelectedGroup }) => {
     const contract = getContract(signer);
 
     try {
-      const tx = await contract.pay(selectedGroup.id, ethers.utils.parseUnits(amount, 6)); // USDT usa 6 casas decimais
+      const tx = await contract.pay(selectedGroup.id, ethers.utils.parseUnits(amount, 18)); // USDT usa 6 casas decimais
       await tx.wait();
       alert('Pagamento realizado com sucesso');
     } catch (error) {
@@ -31,6 +31,7 @@ const SelectGroupPage = ({ setSelectedGroup }) => {
   const handleGroupSelection = (group) => {
     setSelectedGroup(group);
     setSelectedGroupState(group);
+    setAmount(group.value);
   };
 
   return (
