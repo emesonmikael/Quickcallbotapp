@@ -88,6 +88,22 @@ const SelectGroupPage = ({ setSelectedGroup }) => {
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
           />
+          <form >
+     
+     <label for="scales">Envie o link de uma imagem </label>
+
+      <input
+        type="text"
+        name="produto"
+        placeholder="Imagem"
+        value={formData.produto}
+        onChange={handleChange}
+        font-size='10'
+      />
+      
+       
+      
+      </form>
           <button onClick={handlePayment}>Pagar Grupo</button>
         </div>
       )}
