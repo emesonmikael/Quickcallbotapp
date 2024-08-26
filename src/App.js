@@ -1,3 +1,4 @@
+// src/App.js
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import SelectGroupPage from './pages/SelectGroupPage';
@@ -11,10 +12,10 @@ function App() {
       <nav>
         <ul>
           <li>
-            <Link to="/">Select Group</Link>
+            <Link to="/">Selecionar Grupo</Link>
           </li>
           <li>
-            <Link to="/manage">Manage Groups</Link>
+            <Link to="/manage">Gerenciar Grupos</Link>
           </li>
         </ul>
       </nav>
@@ -28,16 +29,6 @@ function App() {
           element={<ManageGroupPage />} 
         />
       </Routes>
-      {selectedGroup && (
-        <div>
-          <h3>Selected Group Details:</h3>
-          <p>ID: {selectedGroup.id}</p>
-          <p>Name: {selectedGroup.name}</p>
-          <p>Telegram ID: {selectedGroup.telegramId}</p>
-          <p>Value: {selectedGroup.value}</p>
-          <p>Wallet: {selectedGroup.wallet}</p>
-        </div>
-      )}
     </Router>
   );
 }

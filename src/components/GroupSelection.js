@@ -5,6 +5,8 @@ import { ethers } from 'ethers';
 const GroupSelection = ({ setSelectedGroup }) => {
   const [groups, setGroups] = useState([]);
   const [selectedGroupId, setSelectedGroupId] = useState(null);
+  const [valor, setValor] = useState("");
+
 
   useEffect(() => {
     const fetchGroups = async () => {
@@ -33,6 +35,16 @@ const GroupSelection = ({ setSelectedGroup }) => {
     const group = groups.find(g => g.id === groupId);
     setSelectedGroup(group);
     setSelectedGroupId(groupId);
+    setValor(group.value);
+    console.log(valor);
+    console.log(group.id);
+  
+  };
+  async function pagament()
+  {
+    const contract = getContract();
+    await contract.pay(groups.id, ethers.utils.parseUnits(valor, 18));
+    alert("Pagamento realizado com sucesso!");
   };
 
   return (
@@ -42,10 +54,12 @@ const GroupSelection = ({ setSelectedGroup }) => {
         {groups.map(group => (
           <li key={group.id}>
             <button onClick={() => handleSelectGroup(group.id)}>
-              {group.name} - {group.telegramId}
+              {group.name} - Valor: {group.value}
             </button>
+            <button onClick={ pagament}> enviar</button>
           </li>
         ))}
+        
       </ul>
     </div>
   );

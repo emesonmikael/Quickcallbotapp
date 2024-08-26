@@ -5,11 +5,12 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import TelegramGroupManager from './meta';
 import GroupSelection from './components/GroupSelection';
+import Payment from './components/Payment';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Payment />
   </React.StrictMode>
 );
 
