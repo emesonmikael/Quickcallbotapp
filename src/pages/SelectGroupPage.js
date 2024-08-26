@@ -4,6 +4,7 @@ import GroupSelection from '../components/GroupSelection';
 import { getContract, getContract2 } from '../contractConfig';
 import { ethers } from 'ethers';
 import axios from 'axios';
+import './App.css';
 
 const SelectGroupPage = ({ setSelectedGroup }) => {
   const [selectedGroup, setSelectedGroupState] = useState(null);
@@ -73,7 +74,7 @@ const SelectGroupPage = ({ setSelectedGroup }) => {
   };
 
   return (
-    <div>
+    <div className="App" >
       <h1>Selecione um Grupo</h1>
       <GroupSelection setSelectedGroup={handleGroupSelection} />
       
