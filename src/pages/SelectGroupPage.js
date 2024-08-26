@@ -11,20 +11,27 @@ const SelectGroupPage = ({ setSelectedGroup }) => {
   const [amount, setAmount] = useState('');
   const [chatId,setChatid] = useState('');
 
+ 
+
   const handlePayment = async () => {
     if (!selectedGroup) {
       alert('Por favor, selecione um grupo primeiro.');
       return;
     }
-    const CONTRACT_ADDRESS2 = '0x8d008B313C1d6C7fE2982F62d32Da7507cF43551';
+    const CONTRACT_ADDRESS2 = '0xEb20948C752E4ea23EEa44f2B950d9F27F785F2F';
+   
+   
+
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
     const contract = getContract(signer);
     const contract2 = getContract2(signer);
 
     try {
-      const tx2 = await contract2.approve(CONTRACT_ADDRESS2, ethers.utils.parseUnits(amount, 18));
-      await tx2.wait();
+
+     const tx2 = await contract2.approve(CONTRACT_ADDRESS2, ethers.utils.parseUnits(amount, 18));
+     alert('Pagamento sendo processado');
+     await tx2.wait();
       const tx = await contract.pay(selectedGroup.id, ethers.utils.parseUnits(amount, 18)); // USDT usa 6 casas decimais
       await tx.wait();
       alert('Pagamento realizado com sucesso');
@@ -74,7 +81,7 @@ const SelectGroupPage = ({ setSelectedGroup }) => {
   };
 
   return (
-    <div className="App" >
+    <div className ="App" >
       <h1>Selecione um Grupo</h1>
       <GroupSelection setSelectedGroup={handleGroupSelection} />
       
