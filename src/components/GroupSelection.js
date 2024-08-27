@@ -48,7 +48,7 @@ const GroupSelection = ({ setSelectedGroup }) => {
   };
 
   return (
-    <div>
+    <div className ="App">
       <h2>Select a Group</h2>
       <ul>
         {groups.map(group => (
