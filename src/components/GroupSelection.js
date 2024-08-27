@@ -56,7 +56,7 @@ const GroupSelection = ({ setSelectedGroup }) => {
             <button onClick={() => handleSelectGroup(group.id)}>
               {group.name} - Valor: {group.value}
             </button>
-            <button onClick={ pagament}> enviar</button>
+           
           </li>
         ))}
         
