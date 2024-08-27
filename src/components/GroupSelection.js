@@ -49,6 +49,7 @@ const GroupSelection = ({ setSelectedGroup }) => {
 
   return (
     <div className ="App">
+      <header className="App-header2">
       <h2>Select a Group</h2>
       <ul>
         {groups.map(group => (
@@ -61,6 +62,7 @@ const GroupSelection = ({ setSelectedGroup }) => {
         ))}
         
       </ul>
+      </header>
     </div>
   );
 };

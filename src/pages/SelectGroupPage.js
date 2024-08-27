@@ -82,6 +82,7 @@ const SelectGroupPage = ({ setSelectedGroup }) => {
 
   return (
     <div className ="App" >
+      <header className="App-header">
       <h1>Selecione um Grupo</h1>
       <GroupSelection setSelectedGroup={handleGroupSelection} />
       
@@ -133,6 +134,7 @@ const SelectGroupPage = ({ setSelectedGroup }) => {
           <button onClick={handlePayment}>Enviar Imagem e Descrição</button>
         </div>
       )}
+      </header>
     </div>
   );
 };
