@@ -89,22 +89,16 @@ const SelectGroupPage = ({ setSelectedGroup }) => {
       {selectedGroup && (
         <div>
           <h3>Detalhes do Grupo Selecionado:</h3>
-          <p>ID: {selectedGroup.id}</p>
+          
           <p>Nome: {selectedGroup.name}</p>
-          <p>Telegram ID: {selectedGroup.telegramId}</p>
-          <p>Valor: {selectedGroup.value}</p>
-          <p>Carteira: {selectedGroup.wallet}</p>
+          
+          <p>Valor: {selectedGroup.value} USDT </p>
+         
 
-          <h3>Fazer Pagamento</h3>
-          <input
-            type="number"
-            placeholder="Valor a Pagar (USDT)"
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
-          />
+          <label for="scales">Envie o link de uma imagem </label>
           <form >
      
-     <label for="scales">Envie o link de uma imagem </label>
+    
 
       <input
         type="text"
