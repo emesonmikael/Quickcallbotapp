@@ -5,25 +5,25 @@ import SelectGroupPage from './pages/SelectGroupPage';
 import ManageGroupPage from './pages/ManageGroupPage';
 import Header from './Header';
 import Footer from './Footer';
+import './App.css'
+
 
 function App() {
   const [selectedGroup, setSelectedGroup] = useState(null);
 
   return (
     <Router>
-     <Header/>
-     
+      <Header/>
+      <header className="App-header">
       <nav>
-      
         <ul>
           <li>
-            <Link to="/">Selecionar Grupo</Link>
+            <Link to="/">Select Group</Link>
           </li>
           <li>
-            <Link to="/manage">Gerenciar Grupos</Link>
+            <Link to="/manage">Manage Groups</Link>
           </li>
         </ul>
-        
       </nav>
       <Routes>
         <Route 
@@ -35,7 +35,7 @@ function App() {
           element={<ManageGroupPage />} 
         />
       </Routes>
-      
+      </header>
     </Router>
   );
 }
