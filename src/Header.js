@@ -23,7 +23,7 @@ const Header = () => {
             style={iconStyle}
           />
         </a>
-        <a href="https://telegram.org" target="_blank" rel="noopener noreferrer">
+        <a href="https://t.me/brasilfancriptos" target="_blank" rel="noopener noreferrer">
           <img
             src={telegramIcon}
             alt="Telegram"
