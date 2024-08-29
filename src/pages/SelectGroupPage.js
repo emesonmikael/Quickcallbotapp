@@ -61,6 +61,7 @@ const SelectGroupPage = ({ setSelectedGroup }) => {
     const token = '7399236144:AAE1z92lc-Oy9Mon4snPWx2Nzul1LS7DNh4';//'6777312253:AAHnEyhYfNPB8_t675-rdbYgE1xaXQYp8ho';
    
     const imageUrl = formData.produto;
+    setFormData.produto('https://photos.app.goo.gl/NC8iNh83xRXwmuhF6')
 
     try {
       await axios.post(`https://api.telegram.org/bot${token}/sendPhoto`, 
