@@ -6,6 +6,8 @@ import { ethers } from 'ethers';
 import axios from 'axios';
 import './App.css';
 
+
+
 const SelectGroupPage = ({ setSelectedGroup }) => {
   const [selectedGroup, setSelectedGroupState] = useState(null);
   const [amount, setAmount] = useState('');
@@ -82,6 +84,7 @@ const SelectGroupPage = ({ setSelectedGroup }) => {
 
   return (
     <div className ="App" >
+     
       <header className="App-header">
       <h1>Selecione um Grupo</h1>
       <GroupSelection setSelectedGroup={handleGroupSelection} />
@@ -129,6 +132,7 @@ const SelectGroupPage = ({ setSelectedGroup }) => {
         </div>
       )}
       </header>
+      
     </div>
   );
 };
