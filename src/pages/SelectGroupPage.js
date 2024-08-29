@@ -87,21 +87,12 @@ const SelectGroupPage = ({ setSelectedGroup }) => {
 
   return (
     <div className ="App" >
-     
+      <GroupSelection setSelectedGroup={handleGroupSelection} />
+
       <header className="App-header">
       
-      <GroupSelection setSelectedGroup={handleGroupSelection} />
-      
-      {selectedGroup && (
-        <div>
-          <h3>Detalhes do Grupo Selecionado:</h3>
-          
-          <p>Nome: {selectedGroup.name}</p>
-          
-          <p>Valor: {selectedGroup.value} USDT </p>
-         
-
-          <label for="scales">Envie o link de uma imagem </label>
+     
+      <label for="scales">Envie o link de uma imagem </label>
           <form >
      
     
@@ -132,6 +123,17 @@ const SelectGroupPage = ({ setSelectedGroup }) => {
       >Discriçao do seu projeto aqui</textarea> 
       </form>
           <button onClick={handlePayment}>Enviar Imagem e Descrição</button>
+      
+      {selectedGroup && (
+        <div>
+          <h3>Detalhes do Grupo Selecionado:</h3>
+          
+          <p>Nome: {selectedGroup.name}</p>
+          
+          <p>Valor: {selectedGroup.value} USDT </p>
+         
+
+         
           
         </div>
         
