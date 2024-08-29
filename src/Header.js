@@ -43,7 +43,7 @@ const headerStyle = {
   justifyContent: 'space-between',
   alignItems: 'center',
   padding: '10px 20px',
-  backgroundColor: '#f8f9fa',
+  backgroundColor: ' #076907',
 };
 
 const logoContainerStyle = {
