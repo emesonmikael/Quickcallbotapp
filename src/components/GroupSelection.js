@@ -52,14 +52,14 @@ const GroupSelection = ({ setSelectedGroup }) => {
       <header className="App-header2">
       <h2>Select a Group</h2>
       <ul>
+      <select onChange={(e) => handleSelectGroup(parseInt(e.target.value))}>
+        <option value="">Selecione um grupo</option>
         {groups.map(group => (
-          <li key={group.id}>
-            <button onClick={() => handleSelectGroup(group.id)}>
-              {group.name} - Valor: {group.value}
-            </button>
-           
-          </li>
+          <option key={group.id} value={group.id}>
+            {group.name}
+          </option>
         ))}
+      </select>
         
       </ul>
       </header>

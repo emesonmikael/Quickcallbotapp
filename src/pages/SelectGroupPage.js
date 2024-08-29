@@ -86,7 +86,7 @@ const SelectGroupPage = ({ setSelectedGroup }) => {
     <div className ="App" >
      
       <header className="App-header">
-      <h1>Selecione um Grupo</h1>
+      
       <GroupSelection setSelectedGroup={handleGroupSelection} />
       
       {selectedGroup && (

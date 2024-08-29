@@ -15,25 +15,25 @@
 
 .App-header {
  
-  background-color: #08a32a;
+  background-color: hsl(136, 32%, 9%);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: rgb(3, 3, 7);
+  color: rgb(241, 241, 248);
 }
 .App-header2 {
  
-  background-color: #0e0f0f;
+  background-color: hsl(136,32%,9%);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: rgb(8, 194, 55);
+  color: #076907;
 }
 
 .App-link {
@@ -53,5 +53,5 @@
   background-color: #61dafb;
 }
 .div{
-  background-color: #61dafb;
+  background-color: hsl(118, 91%, 22%);
 }

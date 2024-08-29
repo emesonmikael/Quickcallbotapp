@@ -11,8 +11,9 @@ function App() {
 
   return (
     <Router>
-      <Header />
+     
       <nav>
+      <Header />
         <ul>
           <li>
             <Link to="/">Selecionar Grupo</Link>
