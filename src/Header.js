@@ -5,8 +5,7 @@ const Header = () => {
     <header style={headerStyle}>
       <div style={logoContainerStyle}>
         <img
-          src="
-https://photos.app.goo.gl/U9miKS3sjqZwLLJaA"
+          src="Ahttps://photos.app.goo.gl/NC8iNh83xRXwmuhF6"
           alt="Logo"
           style={logoStyle}
         />

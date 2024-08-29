@@ -11,9 +11,10 @@ function App() {
 
   return (
     <Router>
+     <Header/>
      
       <nav>
-      <Header />
+      
         <ul>
           <li>
             <Link to="/">Selecionar Grupo</Link>
@@ -34,7 +35,7 @@ function App() {
           element={<ManageGroupPage />} 
         />
       </Routes>
-    
+      
     </Router>
   );
 }

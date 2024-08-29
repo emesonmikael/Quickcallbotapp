@@ -5,6 +5,7 @@ import { getContract, getContract2 } from '../contractConfig';
 import { ethers } from 'ethers';
 import axios from 'axios';
 import './App.css';
+import Footer from '../Footer';
 
 
 
@@ -129,10 +130,13 @@ const SelectGroupPage = ({ setSelectedGroup }) => {
       >Discriçao do seu projeto aqui</textarea> 
       </form>
           <button onClick={handlePayment}>Enviar Imagem e Descrição</button>
+          
         </div>
+        
       )}
+       
       </header>
-      
+     
     </div>
   );
 };
