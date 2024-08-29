@@ -22,6 +22,7 @@ function App() {
             <Link to="/manage">Gerenciar Grupos</Link>
           </li>
         </ul>
+        
       </nav>
       <Routes>
         <Route 
@@ -33,7 +34,7 @@ function App() {
           element={<ManageGroupPage />} 
         />
       </Routes>
-      <Footer />
+    
     </Router>
   );
 }
