@@ -9,7 +9,7 @@ const Header = () => {
           alt="Logo"
           style={logoStyle}
         />
-        <h1 style={nameStyle}>Nome do Projeto</h1>
+        <h1 style={nameStyle}>BFC QUICK CALL BOT</h1>
       </div>
       <div style={iconContainerStyle}>
         <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
