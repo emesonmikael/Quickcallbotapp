@@ -3,12 +3,15 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import SelectGroupPage from './pages/SelectGroupPage';
 import ManageGroupPage from './pages/ManageGroupPage';
+import Header from './Header';
+import Footer from './Footer';
 
 function App() {
   const [selectedGroup, setSelectedGroup] = useState(null);
 
   return (
     <Router>
+      <Header />
       <nav>
         <ul>
           <li>
@@ -29,6 +32,7 @@ function App() {
           element={<ManageGroupPage />} 
         />
       </Routes>
+      <Footer />
     </Router>
   );
 }
