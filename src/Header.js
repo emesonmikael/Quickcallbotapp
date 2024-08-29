@@ -1,34 +1,38 @@
 import React from 'react';
+import logo from './assets/logo.jpg'; // Caminho para o logo
+import youtubeIcon from './assets/twitter-icon.jpg'; // Caminho para o ícone do YouTube
+import telegramIcon from './assets/telegram-icon.png'; // Caminho para o ícone do Telegram
+import twitterIcon from './assets/twitter-icon.jpg'; // Caminho para o ícone do Twitter
 
 const Header = () => {
   return (
     <header style={headerStyle}>
       <div style={logoContainerStyle}>
         <img
-          src="https://photos.app.goo.gl/ZxsVxzqnM6VvyJ1f8"
+          src={logo}
           alt="Logo"
           style={logoStyle}
         />
-        <h1 style={nameStyle}>Bfc Quick Call Bot</h1>
+        <h1 style={nameStyle}>Nome do Projeto</h1>
       </div>
       <div style={iconContainerStyle}>
-        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://youtube.com/@brasilfancryptos?si=2GBtq2vGvvHffeQo" target="_blank" rel="noopener noreferrer">
           <img
-            src="https://via.placeholder.com/30?text=YT"
+            src={youtubeIcon}
             alt="YouTube"
             style={iconStyle}
           />
         </a>
         <a href="https://telegram.org" target="_blank" rel="noopener noreferrer">
           <img
-            src="https://via.placeholder.com/30?text=TG"
+            src={telegramIcon}
             alt="Telegram"
             style={iconStyle}
           />
         </a>
         <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
           <img
-            src="%PUBLIC_URL%/t.png"
+            src={twitterIcon}
             alt="Twitter"
             style={iconStyle}
           />
@@ -43,7 +47,7 @@ const headerStyle = {
   justifyContent: 'space-between',
   alignItems: 'center',
   padding: '10px 20px',
-  backgroundColor: ' #076907',
+  backgroundColor: '#076907',
 };
 
 const logoContainerStyle = {
