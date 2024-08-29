@@ -48,9 +48,10 @@ const SelectGroupPage = ({ setSelectedGroup }) => {
     nome: '',
     endereco: '',
     cep: '',
+    produto: '',
     bairro: '',
   });
- // setFormData.produto('https://photos.app.goo.gl/NC8iNh83xRXwmuhF6');
+ 
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });

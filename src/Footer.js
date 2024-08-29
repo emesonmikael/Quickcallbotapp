@@ -14,7 +14,7 @@ const footerStyle = {
   backgroundColor: '#076907',
  
   bottom: 0,
-  width: '98%',
+  width: '100%',
 };
 
 export default Footer;
