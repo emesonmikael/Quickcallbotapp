@@ -5,11 +5,11 @@ const Header = () => {
     <header style={headerStyle}>
       <div style={logoContainerStyle}>
         <img
-          src="Ahttps://photos.app.goo.gl/NC8iNh83xRXwmuhF6"
+          src="https://photos.app.goo.gl/ZxsVxzqnM6VvyJ1f8"
           alt="Logo"
           style={logoStyle}
         />
-        <h1 style={nameStyle}>BFC QUICK CALL BOT</h1>
+        <h1 style={nameStyle}>Bfc Quick Call Bot</h1>
       </div>
       <div style={iconContainerStyle}>
         <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
@@ -28,7 +28,7 @@ const Header = () => {
         </a>
         <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
           <img
-            src="https://via.placeholder.com/30?text=TW"
+            src="%PUBLIC_URL%/t.png"
             alt="Twitter"
             style={iconStyle}
           />
