@@ -134,7 +134,7 @@ const SelectGroupPage = ({ setSelectedGroup }) => {
         </div>
         
       )}
-       
+       <Footer/>
       </header>
      
     </div>
