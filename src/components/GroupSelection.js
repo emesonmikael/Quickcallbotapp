@@ -94,6 +94,7 @@ const GroupSelection = ({ setSelectedGroup }) => {
         });
       }
       setGroups(groupList);
+
     };
 
     fetchGroups();
@@ -104,6 +105,7 @@ const GroupSelection = ({ setSelectedGroup }) => {
     setSelectedGroup(group);
     setSelectedGroupId(groupId);
     setValor(group.value);
+    setChatid(group.telegramId);
     console.log(valor);
     console.log(group.id);
    
