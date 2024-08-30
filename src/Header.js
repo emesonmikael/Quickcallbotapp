@@ -3,6 +3,7 @@ import logo from './assets/logo.jpg'; // Caminho para o logo
 import youtubeIcon from './assets/youtube-Icon.jpg'; // Caminho para o ícone do YouTube
 import telegramIcon from './assets/telegram-icon.png'; // Caminho para o ícone do Telegram
 import twitterIcon from './assets/twitter-icon.jpg'; // Caminho para o ícone do Twitter
+import login from './App'
 
 const Header = () => {
   return (
@@ -37,6 +38,7 @@ const Header = () => {
             style={iconStyle}
           />
         </a>
+        <button onClick={login}></button>
       </div>
     </header>
   );
