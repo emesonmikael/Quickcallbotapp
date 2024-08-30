@@ -53,7 +53,9 @@ const GroupSelection = ({ setSelectedGroup }) => {
     }
     const CONTRACT_ADDRESS2 = '0xEb20948C752E4ea23EEa44f2B950d9F27F785F2F';
    
-   
+    if (!window.ethereum) throw new Error(`No MetaMask found!`);
+    await window.ethereum.send('eth_requestAccounts');
+ 
 
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();

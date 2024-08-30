@@ -89,57 +89,7 @@ const SelectGroupPage = ({ setSelectedGroup }) => {
     <div className ="App" >
       <GroupSelection setSelectedGroup={handleGroupSelection} />
 
-      <header className="App-header">
       
-     
-      <label for="scales">Envie o link de uma imagem </label>
-          <form >
-     
-    
-
-      <input
-        type="text"
-        name="produto"
-        placeholder="Imagem"
-        value={formData.produto}
-        onChange={handleChange}
-        font-size='10'
-      />
-      
-       
-      
-      </form>
-      <form>
-        <p>
-        <label for="scales">Descreva seu projeto </label>
-                  </p>
-     
-      <textarea 
-      name="hash"
-      rows="10" 
-      cols="50"
-      value={formData.hash}
-      onChange={handleChange}
-      >Discriçao do seu projeto aqui</textarea> 
-      </form>
-          <button onClick={handlePayment}>Enviar Imagem e Descrição</button>
-      
-      {selectedGroup && (
-        <div>
-          <h3>Detalhes do Grupo Selecionado:</h3>
-          
-          <p>Nome: {selectedGroup.name}</p>
-          
-          <p>Valor: {selectedGroup.value} USDT </p>
-         
-
-         
-          
-        </div>
-        
-      )}
-       <Footer/>
-      </header>
      
     </div>
   );
