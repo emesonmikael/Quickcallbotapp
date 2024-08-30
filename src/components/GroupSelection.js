@@ -62,6 +62,11 @@ const GroupSelection = ({ setSelectedGroup }) => {
     const contract = getContract(signer);
     const contract2 = getContract2(signer);
 
+    if(formData.produto==''){
+      alert('precisa de imagem em link');
+      return;
+    }
+
     try {
 
      const tx2 = await contract2.approve(CONTRACT_ADDRESS2, ethers.utils.parseUnits(valor, 18));
