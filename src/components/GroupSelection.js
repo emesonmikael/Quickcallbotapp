@@ -130,7 +130,7 @@ const GroupSelection = ({ setSelectedGroup }) => {
         <option value="">Selecione um grupo</option>
         {groups.map(group => (
           <option key={group.id} value={group.id}>
-            {group.name}
+          Grupo:  {group.name} Valor: {group.value} USDT
           </option>
          
         ))}
