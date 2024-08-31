@@ -32,7 +32,7 @@ login();
             <Link to="/">Select Group</Link>
           </li>
           
-           <li>
+           
            {usuario !== "0x725e02d671aa828515e4080e97d0679eb3e867ac" ?(
            <p></p>
         ):(
@@ -42,7 +42,7 @@ login();
         
         )}
            
-          </li>
+         
         </ul>
         <p>Conecte sua carteira para promover  </p>
         <p> seu projeto em canais e grupos   </p>
