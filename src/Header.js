@@ -3,7 +3,7 @@ import logo from './assets/logo.jpg'; // Caminho para o logo
 import youtubeIcon from './assets/youtube-Icon.jpg'; // Caminho para o ícone do YouTube
 import telegramIcon from './assets/telegram-icon.png'; // Caminho para o ícone do Telegram
 import twitterIcon from './assets/twitter-icon.jpg'; // Caminho para o ícone do Twitter
-import login from './App'
+import siteIcon from './assets/site-logo.png';
 
 const Header = () => {
   return (
@@ -17,6 +17,13 @@ const Header = () => {
         <h1 style={nameStyle}>Bfc Quick Call Bot</h1>
       </div>
       <div style={iconContainerStyle}>
+      <a href="https://www.brasilfancryptos.com.br/" target="_blank" rel="noopener noreferrer">
+          <img
+            src={siteIcon}
+            alt="Site"
+            style={iconStyle}
+          />
+          </a>
         <a href="https://youtube.com/@brasilfancryptos?si=2GBtq2vGvvHffeQo" target="_blank" rel="noopener noreferrer">
           <img
             src={youtubeIcon}
