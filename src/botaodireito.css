@@ -1,8 +1,8 @@
 /* BotaoDireito.css */
 .botao-direito {
     position: absolute; /* Posiciona o botão de forma absoluta */
-    top: 20px;          /* Define a distância do topo */
-    right: 20px;        /* Define a distância da direita */
+    top: 15px;          /* Define a distância do topo */
+    right: 150px;        /* Define a distância da direita */
     background-color: blue; /* Define a cor de fundo azul */
     color: white;       /* Define a cor do texto branca */
     border: none;       /* Remove a borda */

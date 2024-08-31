@@ -38,7 +38,7 @@ const Header = () => {
             style={iconStyle}
           />
         </a>
-        <button onClick={login}></button>
+       
       </div>
     </header>
   );
@@ -76,6 +76,7 @@ const iconContainerStyle = {
 const iconStyle = {
   width: '30px',
   height: '30px',
+   
 };
 
 export default Header;
