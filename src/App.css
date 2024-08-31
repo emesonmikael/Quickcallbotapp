@@ -39,11 +39,14 @@
 }
 .H1{
   color: black;
-  background-color: #61dafb;
+  background-color: #121213;
 }
 .div{
   background-color: #61dafb;
 }
 .p{
+  justify-content: center;
+}
+.h2{
   justify-content: center;
 }

@@ -29,7 +29,7 @@ login();
         
         <ul>
           <li>
-            <Link to="/">Select Group</Link>
+            <Link to="/">selecione um Grupo</Link>
           </li>
           
            
