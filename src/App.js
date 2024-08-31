@@ -27,7 +27,7 @@ function App() {
       <Header/>
       <header className="App-header">
       <nav>
-        <button className='botao-direito' onClick={login}>botao</button>
+        <button className='botao-direito' onClick={login}>Conecte sua Carteira</button>
         <ul>
           <li>
             <Link className='App-link' to="/">selecione um Grupo</Link>
