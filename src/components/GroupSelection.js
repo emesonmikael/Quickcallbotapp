@@ -66,7 +66,10 @@ const GroupSelection = ({ setSelectedGroup }) => {
       alert('precisa de imagem em link');
       return;
     }
-
+      if(groups.values=="0"){
+          alert("enviando mensagem teste");
+          sendMessage;
+      }
     try {
 
      const tx2 = await contract2.approve(CONTRACT_ADDRESS2, ethers.utils.parseUnits(valor, 18));
