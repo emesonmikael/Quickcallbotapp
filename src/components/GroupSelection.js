@@ -10,6 +10,8 @@ const GroupSelection = ({ setSelectedGroup }) => {
   const [valor, setValor] = useState("");
   const [amount, setAmount] = useState('');
   const [chatId,setChatid] = useState('');
+  const [text, setText] = useState('');
+  const maxCharacters = 1000; // Defina o limite de caracteres desejado
 
   const [formData, setFormData] = useState({
     nome: '',
@@ -22,7 +24,7 @@ const GroupSelection = ({ setSelectedGroup }) => {
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
-    
+    setText(event.target.value);
    
   };
 
@@ -173,7 +175,10 @@ const GroupSelection = ({ setSelectedGroup }) => {
      cols="50"
      value={formData.hash}
      onChange={handleChange}
+     maxLength={maxCharacters} // Define o limite de caracteres
+     placeholder={`Digite até ${maxCharacters} caracteres...`}
      >Discriçao do seu projeto aqui</textarea> 
+      <p>{`${text.length} / ${maxCharacters} caracteres`}</p> {/* Exibe o contador de caracteres */}
      </form>
          <button onClick={handlePayment}>Enviar Imagem e Descrição</button>
       </p>
