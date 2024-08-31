@@ -21,7 +21,7 @@ function App() {
   setUsuario((acount[0]));
   console.log(usuario)
   }
-login();
+
   return (
     <Router>
       <Header/>
