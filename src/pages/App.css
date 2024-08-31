@@ -56,3 +56,9 @@
 .div{
   background-color: hsl(118, 91%, 22%);
 }
+.h2{
+  justify-content: center;
+}
+.p{
+  justify-content: center;
+}
