@@ -27,7 +27,7 @@ login();
       <Header/>
       <header className="App-header">
       <nav>
-        <button className='botao-direito'>botao</button>
+        <button className='botao-direito' onAuxClick={login}>botao</button>
         <ul>
           <li>
             <Link className='App-link' to="/">selecione um Grupo</Link>
