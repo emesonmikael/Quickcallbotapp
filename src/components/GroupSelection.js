@@ -66,9 +66,10 @@ const GroupSelection = ({ setSelectedGroup }) => {
       alert('precisa de imagem em link');
       return;
     }
-      if(groups.values=="0"){
+      if(valor=="0"){
           alert("enviando mensagem teste");
           sendMessage();
+          return;
       }
     try {
 
