@@ -8,6 +8,7 @@ import Footer from './Footer';
 import './App.css'
 import { getContract } from './contractConfig';
 import { ethers } from 'ethers';
+import './botaodireito.css';
 
 
 function App() {
@@ -26,7 +27,7 @@ login();
       <Header/>
       <header className="App-header">
       <nav>
-        
+        <button className='botao-direito'>botao</button>
         <ul>
           <li>
             <Link to="/">selecione um Grupo</Link>
