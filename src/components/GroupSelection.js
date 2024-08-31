@@ -68,7 +68,7 @@ const GroupSelection = ({ setSelectedGroup }) => {
     }
       if(groups.values=="0"){
           alert("enviando mensagem teste");
-          sendMessage;
+          sendMessage();
       }
     try {
 
