@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
   return (
     <footer style={footerStyle}>
-      <p>© 2024 Nome do Projeto. Todos os direitos reservados.</p>
+      <p>© 2024 Bfc Quick call bot. Todos os direitos reservados.</p>
     </footer>
   );
 };
