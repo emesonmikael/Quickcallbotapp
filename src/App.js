@@ -30,7 +30,7 @@ login();
         <button className='botao-direito'>botao</button>
         <ul>
           <li>
-            <Link to="/">selecione um Grupo</Link>
+            <Link className='App-link' to="/">selecione um Grupo</Link>
           </li>
           
            

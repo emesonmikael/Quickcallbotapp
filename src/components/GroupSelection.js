@@ -129,7 +129,7 @@ const GroupSelection = ({ setSelectedGroup }) => {
   return (
     <div className ="App">
       <header className="App-header2">
-      <h2>Selecione um Grupo</h2>
+      <h2 className='h2'>Selecione um Grupo</h2>
       <ul>
       <select onChange={(e) => handleSelectGroup(parseInt(e.target.value))}>
         <option value="">Selecione um grupo</option>
