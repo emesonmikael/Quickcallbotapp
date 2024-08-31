@@ -27,7 +27,7 @@ function App() {
       <Header/>
       <header className="App-header">
       <nav>
-        <button className='botao-direito' onAuxClick={login}>botao</button>
+        <button className='botao-direito' onClick={login}>botao</button>
         <ul>
           <li>
             <Link className='App-link' to="/">selecione um Grupo</Link>
@@ -38,7 +38,7 @@ function App() {
            <p></p>
         ):(
           <p><li>
-          <Link to="/manage">Manage Groups</Link>
+          <Link className='App-link' to="/manage">Manage Groups</Link>
           </li></p>
         
         )}
