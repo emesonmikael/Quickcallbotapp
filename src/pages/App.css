@@ -34,7 +34,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: #076907;
+  color: #0eaf44;
 }
 
 .App-link {
@@ -54,7 +54,7 @@
   background-color: #61dafb;
 }
 .div{
-  background-color: hsl(118, 91%, 22%);
+  background-color:#0eaf44;
 }
 .h2{
   justify-content: center;
