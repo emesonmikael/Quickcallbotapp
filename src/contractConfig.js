@@ -1,7 +1,7 @@
 import { ethers } from 'ethers';
 
-const CONTRACT_ADDRESS2 = '0x8d008B313C1d6C7fE2982F62d32Da7507cF43551';
-const CONTRACT_ADDRESS = '0xEb20948C752E4ea23EEa44f2B950d9F27F785F2F';
+const CONTRACT_ADDRESS2 = '0x55d398326f99059fF775485246999027B3197955';
+const CONTRACT_ADDRESS = '0x6Ba83cc4D7D9b7b2f3B8421e56FE9E54AD89e9A5';
 const ABI = [
   "function editGroup(uint256 groupId, string memory _name, string memory _telegramId, string memory _value, address _wallet) public onlyOwner ",
   "function pay(uint256 groupId, uint256 amount) public",
