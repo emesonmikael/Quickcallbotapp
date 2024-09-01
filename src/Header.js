@@ -81,8 +81,8 @@ const iconContainerStyle = {
 };
 
 const iconStyle = {
-  width: '40px',
-  height: '40px',
+  width: '30px',
+  height: '30px',
    
 };
 
