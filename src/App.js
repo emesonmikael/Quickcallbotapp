@@ -34,7 +34,7 @@ function App() {
           </li>
           
            
-           {usuario !== "0x725e02d671aa828515e4080e97d0679eb3e867ac" ?(
+           {usuario !== "0xc6d8fb7ddcac7ae77d8d2210bae9356ebd861743" ?(
            <p></p>
         ):(
           <p><li>
