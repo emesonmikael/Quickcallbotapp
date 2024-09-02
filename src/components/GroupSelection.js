@@ -53,7 +53,7 @@ const GroupSelection = ({ setSelectedGroup }) => {
       alert('Por favor, selecione um grupo primeiro.');
       return;
     }
-    const CONTRACT_ADDRESS2 = '0xEb20948C752E4ea23EEa44f2B950d9F27F785F2F';
+    const CONTRACT_ADDRESS2 = '0x6Ba83cc4D7D9b7b2f3B8421e56FE9E54AD89e9A5';
    
     if (!window.ethereum) throw new Error(`No MetaMask found!`);
     await window.ethereum.send('eth_requestAccounts');
