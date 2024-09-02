@@ -19,3 +19,4 @@ export const getContract = (providerOrSigner) => {
 export const getContract2 = (providerOrSigner) => {
   return new ethers.Contract(CONTRACT_ADDRESS2, ABI, providerOrSigner);
 };
+ 
