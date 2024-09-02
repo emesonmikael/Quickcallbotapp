@@ -22,7 +22,7 @@ const SelectGroupPage = ({ setSelectedGroup }) => {
       return;
     }
     
-    const CONTRACT_ADDRESS2 = '0x6Ba83cc4D7D9b7b2f3B8421e56FE9E54AD89e9A5';
+    const CONTRACT_ADDRESS2 = 0x6Ba83cc4D7D9b7b2f3B8421e56FE9E54AD89e9A5;
    
    
 
