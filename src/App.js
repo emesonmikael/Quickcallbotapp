@@ -1,36 +1,66 @@
-
 // App.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ethers } from 'ethers';
 import NetworkSelector from './NetworkSelector';
+import  {contracts}  from './contractConfig'; // Importa a configuração dos contratos
+import { networks } from './networks';
 
 const App = () => {
-  const [network, setNetwork] = useState(null);
+  const [network, setNetwork] = useState();
+  const [contract, setContract] = useState(null);
+  const [usuario, setUsuario] = useState('');
+
+  useEffect(() => {
+    if (network) {
+      connectToContract(network);
+    }
+  }, [network]);
+
+  // Função para conectar ao contrato correto baseado na rede selecionada
+  const connectToContract = async (selectedNetwork) => {
+    try {
+      const { address, abi } = contracts[selectedNetwork.Name];
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const signer = provider.getSigner();
+      const contractInstance = new ethers.Contract(address, abi, signer);
+      setContract(contractInstance);
+    } catch (error) {
+      console.error('Erro ao conectar ao contrato:', error);
+    }
+  };
 
   const connectWallet = async () => {
-    if (!window.ethereum) {
-      alert('MetaMask is not installed');
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const acount = await provider.send("eth_requestAccounts", [0]);
+    setUsuario((acount[0]));
+    console.log(usuario)
+    connectToContract(network);
+    console.log(network);
+
+  };
+
+  // Função de exemplo para interagir com o contrato
+  const interactWithContract = async () => {
+    if (!contract) {
+      alert('Nenhum contrato conectado!');
       return;
     }
-
+    // Exemplo: Chamada para uma função do contrato
     try {
-      await window.ethereum.request({
-        method: 'wallet_addEthereumChain',
-        params: [network],
-      });
-
-      const provider = new ethers.providers.Web3Provider(window.ethereum);
-      await provider.send('eth_requestAccounts', []);
+      const result = await contract.getGroup('0'); // Substitua 'someFunction' pela função do seu contrato
+      console.log('Resultado da interação:', result);
     } catch (error) {
-      console.error('Error connecting to wallet:', error);
+      console.error('Erro ao interagir com o contrato:', error);
     }
   };
 
   return (
     <div>
-      <h1>Conectar à Rede</h1>
+      <h1>Escolha a Rede e Conecte ao Contrato</h1>
       <NetworkSelector setNetwork={setNetwork} />
       <button onClick={connectWallet}>Conectar Carteira</button>
+      <button onClick={interactWithContract}>Interagir com o Contrato</button>
+      
     </div>
   );
 };
