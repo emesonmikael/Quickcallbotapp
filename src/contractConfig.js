@@ -35,7 +35,7 @@ export const contracts = {
       /* ABI do contrato na BSC */],
   },
   polygon: {
-    address: '0xPolygonContractAddress', // Substitua pelo endereço do contrato na Polygon
+    address: '0xcf74Ae52ae2c848387e6cD0048e1eC5a93ee2c66', // Substitua pelo endereço do contrato na Polygon
     abi: [
       "function editGroup(uint256 groupId, string memory _name, string memory _telegramId, string memory _value, address _wallet) public onlyOwner ",
   "function pay(uint256 groupId, uint256 amount) public",
@@ -43,6 +43,7 @@ export const contracts = {
   "function setUsdtToken(address _usdtToken) public onlyOwner",
   "function getGroupCount() public view returns (uint256)",
   "function approve(address spender, uint256 amount) public override returns (bool)",
+  "function getOwner() external view override returns (address) ",
   "function getGroup(uint256 groupId) public view returns (string memory, string memory, string memory, address)"
   
       /* ABI do contrato na Polygon */],

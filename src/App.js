@@ -47,7 +47,7 @@ const App = () => {
     }
     // Exemplo: Chamada para uma função do contrato
     try {
-      const result = await contract.getGroup('0'); // Substitua 'someFunction' pela função do seu contrato
+      const result = await contract.getOwner(); // Substitua 'someFunction' pela função do seu contrato
       console.log('Resultado da interação:', result);
     } catch (error) {
       console.error('Erro ao interagir com o contrato:', error);

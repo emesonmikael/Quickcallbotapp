@@ -9,7 +9,7 @@ export const networks = {
   },
   polygon: {
     chainId: '0x89', // 137 em decimal
-    Name: 'Polygon',
+    Name: 'polygon',
     rpcUrls: ['https://polygon-rpc.com/'],
     blockExplorerUrls: ['https://polygonscan.com'],
   },
