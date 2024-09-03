@@ -19,4 +19,15 @@ export const getContract = (providerOrSigner) => {
 export const getContract2 = (providerOrSigner) => {
   return new ethers.Contract(CONTRACT_ADDRESS2, ABI, providerOrSigner);
 };
+
+export const contracts = {
+  bsc: {
+    address: '0xBscContractAddress', // Substitua pelo endereço do contrato na BSC
+    abi: [/* ABI do contrato na BSC */],
+  },
+  polygon: {
+    address: '0xPolygonContractAddress', // Substitua pelo endereço do contrato na Polygon
+    abi: [/* ABI do contrato na Polygon */],
+  },
+};
  
