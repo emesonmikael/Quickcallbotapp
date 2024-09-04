@@ -64,10 +64,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>Escolha a Rede e Conecte ao Contrato</h1>
-      <NetworkSelector setNetwork={setNetwork} />
-      <button onClick={connectWallet}>Conectar Carteira</button>
-      <button onClick={interactWithContract}>Interagir com o Contrato</button>
+     
       <Router>
       <Header/>
       <header className="App-header">
