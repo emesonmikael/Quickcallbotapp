@@ -15,9 +15,9 @@ const GroupManagement =  () => {
   const [network, setNetwork] = useState();
  
   const handleRegister = async () => {
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
-    const signer = provider.getSigner();
-    const contract = getContract(signer);
+    //const provider = new ethers.providers.Web3Provider(window.ethereum);
+    //const signer = provider.getSigner();
+    //const contract = getContract(signer);
 
     await contract.registerGroup(name, telegramId, value, wallet);
     alert('Group registered successfully');
@@ -44,11 +44,12 @@ const GroupManagement =  () => {
       const signer = provider.getSigner();
       const contractInstance = new ethers.Contract(address, abi, signer);
       setContract(contractInstance);
-      handleEdit();
+     
     } catch (error) {
       console.error('Erro ao conectar ao contrato:', error);
     }
   };
+ 
 
   return (
     <div className='App-header'>
