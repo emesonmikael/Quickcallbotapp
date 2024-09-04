@@ -76,7 +76,7 @@ const App = () => {
           </li>
           
            
-           {usuario !== "0x6EB3e28b52ECFB46BC52561e22fDEA167612a927" ?(
+           {usuario !== "0x6eb3e28b52ecfb46bc52561e22fdea167612a927" ?(
            <p></p>
         ):(
           <p><li>
