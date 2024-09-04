@@ -190,7 +190,9 @@ const GroupSelection = ({ setSelectedGroup }) => {
   return (
     
     <div className ="App">
+      <div className ='botao-direito'>
       <NetworkSelector setNetwork={setNetwork} />
+      </div>
       <header className="App-header2">
       
       <p>Selecione um Grupo</p>
