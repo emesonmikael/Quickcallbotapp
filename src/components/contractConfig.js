@@ -5,7 +5,7 @@ const CONTRACT_ADDRESS2 = '0x55d398326f99059fF775485246999027B3197955';
 
 const CONTRACT_ADDRESS = ' 0xf60b0939283657eaa3c83b635bdb28a35aef7225';
 
-const CONTRACT_ADDRESS3 = '0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270';
+const CONTRACT_ADDRESS3 = '0xc2132D05D31c914a87C6611C10748AEb04B58e8F';
 const ABI = [
   "function editGroup(uint256 groupId, string memory _name, string memory _telegramId, string memory _value, address _wallet) public onlyOwner ",
   "function pay(uint256 groupId, uint256 amount) public",
@@ -42,7 +42,7 @@ export const contracts = {
       /* ABI do contrato na BSC */],
   },
   polygon: {
-    address: '0xcf74Ae52ae2c848387e6cD0048e1eC5a93ee2c66', // Substitua pelo endereço do contrato na Polygon
+    address: '0x4C8D2C53dff6cD20fe6689D2F92Bed76BdfD506e', // Substitua pelo endereço do contrato na Polygon
     abi: [
       "function editGroup(uint256 groupId, string memory _name, string memory _telegramId, string memory _value, address _wallet) public onlyOwner ",
   "function pay(uint256 groupId, uint256 amount) public",
