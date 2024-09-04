@@ -51,7 +51,7 @@ const GroupManagement =  () => {
   };
 
   return (
-    <div>
+    <div className='App-header'>
       <NetworkSelector setNetwork={setNetwork} />
       <h2>Register/Edit Group</h2>
       <input 
