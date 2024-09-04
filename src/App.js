@@ -69,14 +69,14 @@ const App = () => {
       <Header/>
       <header className="App-header">
       <nav>
-        <button className='botao-direito' onClick={connectWallet}>Conectar</button>
+        <button className='botao-direito2' onClick={connectWallet}>Conectar</button>
         <ul>
           <li>
             <Link className='App-link' to="/">selecione um Grupo</Link>
           </li>
           
            
-           {usuario !== "0xc6d8fb7ddcac7ae77d8d2210bae9356ebd861743" ?(
+           {usuario !== "0x6EB3e28b52ECFB46BC52561e22fDEA167612a927" ?(
            <p></p>
         ):(
           <p><li>

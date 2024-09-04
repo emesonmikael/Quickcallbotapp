@@ -1,5 +1,5 @@
 /* BotaoDireito.css */
-.botao-direito {
+.botao-direito2 {
     position: absolute; /* Posiciona o botão de forma absoluta */
     top: 80px;          /* Define a distância do topo */
     right: 20px;        /* Define a distância da direita */
@@ -9,6 +9,13 @@
     padding: 10px 20px; /* Define o espaçamento interno */
     cursor: pointer;    /* Muda o cursor ao passar sobre o botão */
     border-radius: 5px; /* Adiciona bordas arredondadas */
+  }
+  botao-direito {
+    
+    top: 80px;          /* Define a distância do topo */
+    right: 40px;        /* Define a distância da direita */
+   
+   
   }
   
   .botao-direito:hover {
