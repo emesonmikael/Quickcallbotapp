@@ -240,7 +240,7 @@ const GroupSelection = ({ setSelectedGroup }) => {
       <p>{`${text.length} / ${maxCharacters} caracteres`}</p> {/* Exibe o contador de caracteres */}
      </form>
          <button onClick={handlePayment}>Enviar Imagem e Descrição</button>
-         <button onClick={connectToContract}>onChange</button>
+         
       </p>
       
       </ul>
