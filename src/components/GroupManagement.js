@@ -1,14 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState ,useEffect } from 'react';
 import { getContract } from '../contractConfig';
 import { ethers } from 'ethers';
+import  {contracts}  from './contractConfig'; // Importa a configuração dos contratos
 
-const GroupManagement = () => {
+import NetworkSelector from '../NetworkSelector';
+
+const GroupManagement =  () => {
   const [name, setName] = useState('');
   const [telegramId, setTelegramId] = useState('');
   const [value, setValue] = useState('');
   const [wallet, setWallet] = useState('');
   const [groupId, setGroupId] = useState(null);
-
+  const [contract, setContract] = useState(null);
+  const [network, setNetwork] = useState();
+ 
   const handleRegister = async () => {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
@@ -18,17 +23,36 @@ const GroupManagement = () => {
     alert('Group registered successfully');
   };
 
+  useEffect(() => {
+    if (network) {
+      connectToContract(network);
+    }
+  }, [network]);
   const handleEdit = async () => {
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
-    const signer = provider.getSigner();
-    const contract = getContract(signer);
+   
+   // const provider = new ethers.providers.Web3Provider(window.ethereum);
+    //const signer = provider.getSigner();
+    //const contract = getContract(signer);
 
     await contract.editGroup(groupId, name, telegramId, value, wallet);
     alert('Group edited successfully');
   };
+  const connectToContract = async (selectedNetwork) => {
+    try {
+      const { address, abi } = contracts[selectedNetwork.Name];
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const signer = provider.getSigner();
+      const contractInstance = new ethers.Contract(address, abi, signer);
+      setContract(contractInstance);
+      handleEdit();
+    } catch (error) {
+      console.error('Erro ao conectar ao contrato:', error);
+    }
+  };
 
   return (
     <div>
+      <NetworkSelector setNetwork={setNetwork} />
       <h2>Register/Edit Group</h2>
       <input 
         type="text" 
