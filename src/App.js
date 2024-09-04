@@ -85,7 +85,7 @@ const App = () => {
         
         )}
            
-         
+         {usuario}
         </ul>
         <p>Conecte sua carteira para promover  </p>
         <p> seu projeto em canais e grupos   </p>
