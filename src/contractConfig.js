@@ -22,7 +22,7 @@ export const getContract2 = (providerOrSigner) => {
 
 export const contracts = {
   bsc: {
-    address: '0x6Ba83cc4D7D9b7b2f3B8421e56FE9E54AD89e9A5', // Substitua pelo endereço do contrato na BSC
+    address: '0xf60B0939283657EAa3c83B635BDB28A35AEF7225', // Substitua pelo endereço do contrato na BSC
     abi: [
       "function editGroup(uint256 groupId, string memory _name, string memory _telegramId, string memory _value, address _wallet) public onlyOwner ",
   "function pay(uint256 groupId, uint256 amount) public",
