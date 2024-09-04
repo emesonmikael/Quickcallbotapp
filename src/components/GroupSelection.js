@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { getContract,getContract2 } from '../contractConfig';
+import { getContract,getContract2} from '../contractConfig';
 import { ethers } from 'ethers';
 import axios from 'axios';
 import  {contracts}  from '../contractConfig'; // Importa a configuração dos contratos
 import NetworkSelector from '../NetworkSelector';
+import { getContract3 } from './contractConfig';
 
 
 const GroupSelection = ({ setSelectedGroup }) => {
   const [groups, setGroups] = useState([]);
   const [selectedGroupId, setSelectedGroupId] = useState(null);
   const [valor, setValor] = useState("");
-  const [amount, setAmount] = useState('');
+  const [rede, setRede] = useState('');
   const [chatId,setChatid] = useState('');
   const [text, setText] = useState('');
   const maxCharacters = 1000; // Defina o limite de caracteres desejado
@@ -71,6 +72,8 @@ const GroupSelection = ({ setSelectedGroup }) => {
       const signer = provider.getSigner();
       const contractInstance = new ethers.Contract(address, abi, signer);
       setContract(contractInstance);
+      console.log(selectedNetwork.Name);
+      setRede(selectedNetwork.Name);
     } catch (error) {
       console.error('Erro ao conectar ao contrato:', error);
     }
@@ -105,7 +108,7 @@ const GroupSelection = ({ setSelectedGroup }) => {
     const signer = provider.getSigner();
    // const contract = getContract(signer);
     const contract2 = getContract2(signer);
-
+    const contract3 = getContract3(signer);
     if(formData.produto==''){
       alert('precisa de imagem em link');
       return;
@@ -116,10 +119,19 @@ const GroupSelection = ({ setSelectedGroup }) => {
           return;
       }
     try {
-
-     const tx2 = await contract2.approve(CONTRACT_ADDRESS2, ethers.utils.parseUnits(valor, 18));
+      if(
+        rede == 'bsc'
+      ){
+        const tx2 = await contract2.approve(CONTRACT_ADDRESS2, ethers.utils.parseUnits(valor, 18));
+        await tx2.wait();
+      }else{
+        const tx3 = await contract3.approve(CONTRACT_ADDRESS2, ethers.utils.parseUnits(valor, 18));
+       await tx3.wait()
+      }
+      //const tx2 = await contract2.approve(CONTRACT_ADDRESS2, ethers.utils.parseUnits(valor, 18));
+     
      alert('Pagamento sendo processado');
-     await tx2.wait();
+     //await tx2.wait();
       const tx = await contract.pay(selectedGroupId, ethers.utils.parseUnits(valor, 18)); // USDT usa 6 casas decimais
       await tx.wait();
       alert('Pagamento realizado com sucesso');
