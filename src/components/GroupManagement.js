@@ -23,6 +23,7 @@ const GroupManagement =  () => {
     alert('Group registered successfully');
   };
 
+  
   useEffect(() => {
     if (network) {
       connectToContract(network);

@@ -42,7 +42,7 @@ export const contracts = {
       /* ABI do contrato na BSC */],
   },
   polygon: {
-    address: '0x4C8D2C53dff6cD20fe6689D2F92Bed76BdfD506e', // Substitua pelo endereço do contrato na Polygon
+    address: '0x0D47699aeeFA93Bf25daFd5eC8cC973Dd239C8a0', // Substitua pelo endereço do contrato na Polygon
     abi: [
       "function editGroup(uint256 groupId, string memory _name, string memory _telegramId, string memory _value, address _wallet) public onlyOwner ",
   "function pay(uint256 groupId, uint256 amount) public",
