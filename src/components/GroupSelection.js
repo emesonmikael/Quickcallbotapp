@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { getContract,getContract2 } from '../contractConfig';
 import { ethers } from 'ethers';
 import axios from 'axios';
+import  {contracts}  from '../contractConfig'; // Importa a configuração dos contratos
+import NetworkSelector from '../NetworkSelector';
 
 
 const GroupSelection = ({ setSelectedGroup }) => {
@@ -12,6 +14,10 @@ const GroupSelection = ({ setSelectedGroup }) => {
   const [chatId,setChatid] = useState('');
   const [text, setText] = useState('');
   const maxCharacters = 1000; // Defina o limite de caracteres desejado
+  const [contract, setContract] = useState(null);
+  const [network, setNetwork] = useState();
+  const [usuario, setUsuario] = useState('');
+ 
 
   const [formData, setFormData] = useState({
     nome: '',
@@ -47,6 +53,42 @@ const GroupSelection = ({ setSelectedGroup }) => {
       console.error('Erro ao enviar:', error);
     }
   };
+  const connectWallet = async () => {
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const acount = await provider.send("eth_requestAccounts", [0]);
+    setUsuario((acount[0]));
+    console.log(usuario)
+    connectToContract(network);
+    console.log(network);
+
+  };
+
+   // Função para conectar ao contrato correto baseado na rede selecionada
+   const connectToContract = async (selectedNetwork) => {
+    try {
+      const { address, abi } = contracts[selectedNetwork.Name];
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const signer = provider.getSigner();
+      const contractInstance = new ethers.Contract(address, abi, signer);
+      setContract(contractInstance);
+    } catch (error) {
+      console.error('Erro ao conectar ao contrato:', error);
+    }
+  };
+
+  const interactWithContract = async () => {
+    if (!contract) {
+      alert('Nenhum contrato conectado!');
+      return;
+    }
+    // Exemplo: Chamada para uma função do contrato
+    try {
+      const result = await contract.getGroup('0'); // Substitua 'someFunction' pela função do seu contrato
+      console.log('Resultado da interação:', result);
+    } catch (error) {
+      console.error('Erro ao interagir com o contrato:', error);
+    }
+  };
 
   const handlePayment = async () => {
     if (!groups) {
@@ -61,7 +103,7 @@ const GroupSelection = ({ setSelectedGroup }) => {
 
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
-    const contract = getContract(signer);
+   // const contract = getContract(signer);
     const contract2 = getContract2(signer);
 
     if(formData.produto==''){
@@ -90,6 +132,7 @@ const GroupSelection = ({ setSelectedGroup }) => {
 
 
   useEffect(() => {
+    connectToContract(network);
     const fetchGroups = async () => {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const contract = getContract(provider);
@@ -111,7 +154,7 @@ const GroupSelection = ({ setSelectedGroup }) => {
     };
 
     fetchGroups();
-  }, []);
+  }, [ network]);
 
   const handleSelectGroup = (groupId) => {
     const group = groups.find(g => g.id === groupId);
@@ -133,9 +176,13 @@ const GroupSelection = ({ setSelectedGroup }) => {
   };
 
   return (
+    
     <div className ="App">
+      <NetworkSelector setNetwork={setNetwork} />
       <header className="App-header2">
+      
       <p>Selecione um Grupo</p>
+      
       <ul>
       <select onChange={(e) => handleSelectGroup(parseInt(e.target.value))}>
         <option value="">Selecione um grupo</option>
@@ -181,6 +228,7 @@ const GroupSelection = ({ setSelectedGroup }) => {
       <p>{`${text.length} / ${maxCharacters} caracteres`}</p> {/* Exibe o contador de caracteres */}
      </form>
          <button onClick={handlePayment}>Enviar Imagem e Descrição</button>
+         <button onClick={connectToContract}>onChange</button>
       </p>
       
       </ul>

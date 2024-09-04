@@ -4,11 +4,19 @@ import { ethers } from 'ethers';
 import NetworkSelector from './NetworkSelector';
 import  {contracts}  from './contractConfig'; // Importa a configuração dos contratos
 import { networks } from './networks';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import SelectGroupPage from './pages/SelectGroupPage';
+import ManageGroupPage from './pages/ManageGroupPage';
+import Header from './Header';
+import Footer from './Footer';
+import './App.css'
+import './botaodireito.css';
 
 const App = () => {
   const [network, setNetwork] = useState();
   const [contract, setContract] = useState(null);
   const [usuario, setUsuario] = useState('');
+  const [selectedGroup, setSelectedGroup] = useState(null);
 
   useEffect(() => {
     if (network) {
@@ -60,7 +68,46 @@ const App = () => {
       <NetworkSelector setNetwork={setNetwork} />
       <button onClick={connectWallet}>Conectar Carteira</button>
       <button onClick={interactWithContract}>Interagir com o Contrato</button>
-      
+      <Router>
+      <Header/>
+      <header className="App-header">
+      <nav>
+        <button className='botao-direito' onClick={connectWallet}>Conectar</button>
+        <ul>
+          <li>
+            <Link className='App-link' to="/">selecione um Grupo</Link>
+          </li>
+          
+           
+           {usuario !== "0xc6d8fb7ddcac7ae77d8d2210bae9356ebd861743" ?(
+           <p></p>
+        ):(
+          <p><li>
+          <Link className='App-link' to="/manage">Manage Groups</Link>
+          </li></p>
+        
+        )}
+           
+         
+        </ul>
+        <p>Conecte sua carteira para promover  </p>
+        <p> seu projeto em canais e grupos   </p>
+        <p> ativos do telegram com apenas um click.</p>
+      </nav>
+      <Routes>
+      <Route 
+          path="/" 
+          element={<SelectGroupPage setSelectedGroup={setSelectedGroup} />} 
+        />
+        
+        <Route 
+          path="/manage" 
+          element={<ManageGroupPage />} 
+        />
+      </Routes>
+      </header>
+      <Footer/>
+    </Router>
     </div>
   );
 };
