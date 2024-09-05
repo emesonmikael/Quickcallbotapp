@@ -148,7 +148,7 @@ const GroupSelection = ({ setSelectedGroup }) => {
     const fetchGroups = async () => {
       if(rede == 'bsc'){
         const provider = new ethers.providers.Web3Provider(window.ethereum);
-     const contract = getContract(provider);
+     const contract = getContract4(provider);
       const groupCount = await contract.getGroupCount();
       let groupList = [];
       for (let i = 0; i < groupCount; i++) {
@@ -164,7 +164,7 @@ const GroupSelection = ({ setSelectedGroup }) => {
       setGroups(groupList);
       }else{
         const provider = new ethers.providers.Web3Provider(window.ethereum);
-     const contract = getContract4(provider);
+     const contract = getContract(provider);
       const groupCount = await contract.getGroupCount();
       let groupList = [];
       for (let i = 0; i < groupCount; i++) {
