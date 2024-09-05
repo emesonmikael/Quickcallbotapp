@@ -146,8 +146,8 @@ const GroupSelection = ({ setSelectedGroup }) => {
   useEffect(() => {
     connectToContract(network);
     const fetchGroups = async () => {
-      const provider = new ethers.providers.Web3Provider(window.ethereum);
-      const contract = getContract(provider);
+      //const provider = new ethers.providers.Web3Provider(window.ethereum);
+      //const contract = getContract(provider);
       const groupCount = await contract.getGroupCount();
 
       let groupList = [];
