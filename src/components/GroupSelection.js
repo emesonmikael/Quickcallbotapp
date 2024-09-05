@@ -4,7 +4,7 @@ import { ethers } from 'ethers';
 import axios from 'axios';
 import  {contracts}  from '../contractConfig'; // Importa a configuração dos contratos
 import NetworkSelector from '../NetworkSelector';
-import { getContract3 } from './contractConfig';
+import { getContract3, getContract4 } from './contractConfig';
 
 
 const GroupSelection = ({ setSelectedGroup }) => {
@@ -146,10 +146,10 @@ const GroupSelection = ({ setSelectedGroup }) => {
   useEffect(() => {
     connectToContract(network);
     const fetchGroups = async () => {
-      //const provider = new ethers.providers.Web3Provider(window.ethereum);
-      //const contract = getContract(provider);
+      if(rede == 'bsc'){
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
+     const contract = getContract(provider);
       const groupCount = await contract.getGroupCount();
-
       let groupList = [];
       for (let i = 0; i < groupCount; i++) {
         const group = await contract.getGroup(i);
@@ -162,6 +162,26 @@ const GroupSelection = ({ setSelectedGroup }) => {
         });
       }
       setGroups(groupList);
+      }else{
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
+     const contract = getContract4(provider);
+      const groupCount = await contract.getGroupCount();
+      let groupList = [];
+      for (let i = 0; i < groupCount; i++) {
+        const group = await contract.getGroup(i);
+        groupList.push({
+          id: i,
+          name: group[0],
+          telegramId: group[1],
+          value: group[2],
+          wallet: group[3],
+        });
+      }
+      setGroups(groupList);
+      }
+      
+
+      
 
     };
 

@@ -5,6 +5,8 @@ const CONTRACT_ADDRESS2 = '0x55d398326f99059fF775485246999027B3197955';
 
 const CONTRACT_ADDRESS = ' 0xf60b0939283657eaa3c83b635bdb28a35aef7225';
 
+const CONTRACT_ADDRESS4 = '0x0D47699aeeFA93Bf25daFd5eC8cC973Dd239C8a0';
+
 const CONTRACT_ADDRESS3 = '0xc2132D05D31c914a87C6611C10748AEb04B58e8F';
 const ABI = [
   "function editGroup(uint256 groupId, string memory _name, string memory _telegramId, string memory _value, address _wallet) public onlyOwner ",
@@ -25,6 +27,9 @@ export const getContract2 = (providerOrSigner) => {
 };
 export const getContract3 = (providerOrSigner) => {
   return new ethers.Contract(CONTRACT_ADDRESS3, ABI, providerOrSigner);
+};
+export const getContract4 = (providerOrSigner) => {
+  return new ethers.Contract(CONTRACT_ADDRESS4, ABI, providerOrSigner);
 };
 
 export const contracts = {
