@@ -73,7 +73,44 @@ const GroupSelection = ({ setSelectedGroup }) => {
       const contractInstance = new ethers.Contract(address, abi, signer);
       setContract(contractInstance);
       console.log(selectedNetwork.Name);
+      
       setRede(selectedNetwork.Name);
+    
+     if(selectedNetwork.Name == 'polygon'){
+       //const provider = new ethers.providers.Web3Provider(window.ethereum);
+     const contract = getContract4(provider);
+      const groupCount = await contract.getGroupCount();
+      let groupList = [];
+      for (let i = 0; i < groupCount; i++) {
+        const group = await contract.getGroup(i);
+        groupList.push({
+          id: i,
+          name: group[0],
+          telegramId: group[1],
+          value: group[2],
+          wallet: group[3],
+        });
+      }
+      setGroups(groupList);
+    }
+    if(selectedNetwork.Name == 'bsc'){
+      //const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const contract = getContract(provider);
+     const groupCount = await contract.getGroupCount();
+     let groupList = [];
+     for (let i = 0; i < groupCount; i++) {
+       const group = await contract.getGroup(i);
+       groupList.push({
+         id: i,
+         name: group[0],
+         telegramId: group[1],
+         value: group[2],
+         wallet: group[3],
+       });
+     }
+     setGroups(groupList);
+   }
+
     } catch (error) {
       console.error('Erro ao conectar ao contrato:', error);
     }
@@ -146,13 +183,14 @@ const GroupSelection = ({ setSelectedGroup }) => {
   useEffect(() => {
     connectToContract(network);
     const fetchGroups = async () => {
-      if(rede == 'bsc'){
-        const provider = new ethers.providers.Web3Provider(window.ethereum);
+      connectToContract(network);
+    
+    /*const provider = new ethers.providers.Web3Provider(window.ethereum);
      const contract = getContract4(provider);
       const groupCount = await contract.getGroupCount();
-      let groupList = [];
+     let groupList = [];
       for (let i = 0; i < groupCount; i++) {
-        const group = await contract.getGroup(i);
+       const group = await contract.getGroup(i);
         groupList.push({
           id: i,
           name: group[0],
@@ -160,25 +198,9 @@ const GroupSelection = ({ setSelectedGroup }) => {
           value: group[2],
           wallet: group[3],
         });
-      }
+      
       setGroups(groupList);
-      }else{
-        const provider = new ethers.providers.Web3Provider(window.ethereum);
-     const contract = getContract(provider);
-      const groupCount = await contract.getGroupCount();
-      let groupList = [];
-      for (let i = 0; i < groupCount; i++) {
-        const group = await contract.getGroup(i);
-        groupList.push({
-          id: i,
-          name: group[0],
-          telegramId: group[1],
-          value: group[2],
-          wallet: group[3],
-        });
-      }
-      setGroups(groupList);
-      }
+      }/** */
       
 
       
